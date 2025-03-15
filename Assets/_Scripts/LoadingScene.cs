@@ -10,17 +10,24 @@ public class LoadingScene : MonoBehaviour
     [SerializeField] private Slider slideBar;
     [SerializeField] private Button playBtn;
     
+    
     [Header("__________HITINF__________")]
     [SerializeField] private Transform hitInf;
 
     [SerializeField] private Vector3 originalPosition;
     [SerializeField] private Vector3 targetPosition;
+    [Header("__________Moon__________")]
+    [SerializeField] private Transform moon;
 
+    [SerializeField] private float moonTime = 0;
     private void LoadComponent()
     {
         if (slideBar == null) slideBar = transform.GetComponentInChildren<Slider>();
         if (hitInf == null) hitInf = transform.Find("HITINF");
         if (playBtn == null) playBtn = transform.GetComponentInChildren<Button>();
+        if (moon == null) moon = transform.Find("Moon");
+        moon.position = new Vector3(-7, 2, 0);
+        moonTime = 0;
         slideBar.value = 0;
         
         hitInf.position = originalPosition;
@@ -51,11 +58,9 @@ public class LoadingScene : MonoBehaviour
 
     private void Update()
     {
-        float additionSiderBar;
-        if (slideBar.value < 0.7f) additionSiderBar = Time.deltaTime / 10;
-        else if (slideBar.value >= 0.7f && slideBar.value < 0.9f) additionSiderBar = Time.deltaTime / 20;
-        else additionSiderBar = Time.deltaTime;
-        slideBar.value = Mathf.Min(1, slideBar.value + additionSiderBar);
+        UpdateSliderBar();
+        moonTime = Mathf.Min(1, moonTime += Time.deltaTime / 12);
+        MoveMoon(moonTime);
         if (Math.Abs(slideBar.value - 1) < 0.001f)
         {
             slideBar.gameObject.SetActive(false);
@@ -70,5 +75,29 @@ public class LoadingScene : MonoBehaviour
             });
            
         } 
+    }
+
+    private void UpdateSliderBar()
+    {
+        float additionSiderBar;
+        if (slideBar.value < 0.7f) additionSiderBar = Time.deltaTime / 10;
+        else if (slideBar.value >= 0.7f && slideBar.value < 0.9f) additionSiderBar = Time.deltaTime / 20;
+        else additionSiderBar = Time.deltaTime;
+        slideBar.value = Mathf.Min(1, slideBar.value + additionSiderBar);
+    }
+
+    private void MoveMoon(float x)
+    {
+        moon.position = new Vector3(FX(x), FY(x), 0);
+    }
+
+    private float FX(float x)
+    {
+        return 14 * x - 7;
+    }
+
+    private float FY(float x)
+    {
+        return -6 * x * x + 6 * x + 2;
     }
 }
