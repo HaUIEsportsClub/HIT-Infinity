@@ -45,9 +45,37 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
         
     }
-    
-  
-   
+
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Letter"))
+        {
+            GameManager.Instance.CheckLetter(other.gameObject);
+        }
+        else if (other.CompareTag("Gold"))
+        {
+            if (GoldManager.Instance != null)
+            {
+                GoldManager.Instance.AddGold(10);
+            }
+
+            Destroy(other.gameObject);
+        }
+        else if (other.CompareTag("Health"))
+        {
+            if (health < maxHealth)
+            {
+                health++;
+                if (UIManager.Instance != null)
+                {
+                    UIManager.Instance.UpdateHealthUI(health);
+                }
+                Destroy(other.gameObject);
+            }
+        }
+    }
+
     public void TakeDamage()
     {
         health--;
@@ -62,9 +90,6 @@ public class PlayerController : MonoBehaviour
             UIManager.Instance.gameOverPanel.SetActive(true);
         }
     }
-
- 
-
     void OnCollisionEnter2D(Collision2D other)
     {
         
@@ -73,4 +98,5 @@ public class PlayerController : MonoBehaviour
             isGrounded = true;
         }
     }
+
 }
