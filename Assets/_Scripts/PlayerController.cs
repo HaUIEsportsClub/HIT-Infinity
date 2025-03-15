@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
         if (GameManager.Instance.gameActive == false) return;
         if (isGrounded && (Input.GetKeyDown(KeyCode.Space) ))
         {
+            AudioManager.PlaySound(AudioManager.SoundId.Jump);
             rb.velocity = Vector2.up * jumpForce;
             isGrounded = false;
         }
@@ -57,6 +58,7 @@ public class PlayerController : MonoBehaviour
         {
             if (GoldManager.Instance != null)
             {
+                
                 GoldManager.Instance.AddGold(10);
                 Debug.Log("add gold");
             }
@@ -67,6 +69,7 @@ public class PlayerController : MonoBehaviour
         {
             if (health < maxHealth)
             {
+                AudioManager.PlaySound(AudioManager.SoundId.Heal);
                 health++;
                 if (UIManager.Instance != null)
                 {
@@ -88,6 +91,7 @@ public class PlayerController : MonoBehaviour
         if (health <= 0)
         {
             GameManager.Instance.gameActive = false;
+            AudioManager.PlaySound(AudioManager.SoundId.GameOver);
             UIManager.Instance.gameOverPanel.SetActive(true);
         }
     }
