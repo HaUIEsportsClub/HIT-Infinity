@@ -22,8 +22,10 @@ public class UIManager : MonoBehaviour
     public Button nextLevelButton;
     public Button pauseButton;
     [Header("Health UI")]
-    public Image[] heartIcons; 
-    
+    public Image[] heartIcons;
+
+    public Sprite whiteHeart;
+    public Sprite redHeart;
     void Awake()
     {
         if (Instance == null)
@@ -56,11 +58,12 @@ public class UIManager : MonoBehaviour
         {
             if (i < health)
             {
-                heartIcons[i].color = Color.red;
+                heartIcons[i].sprite = redHeart;
+
             }
             else
             {
-                heartIcons[i].color = Color.white;
+                heartIcons[i].sprite = whiteHeart;
             }
         }
     }

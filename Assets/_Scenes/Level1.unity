@@ -1908,6 +1908,8 @@ MonoBehaviour:
   - {fileID: 1003205445}
   - {fileID: 2143130506}
   - {fileID: 1475806506}
+  whiteHeart: {fileID: 21300000, guid: d6d030bbb1d62a149bc01412a8c19dcf, type: 3}
+  redHeart: {fileID: 21300000, guid: 56b860d643f0a574a9b1105f2abe0182, type: 3}
 --- !u!1 &575735907
 GameObject:
   m_ObjectHideFlags: 0

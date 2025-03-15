@@ -60,7 +60,6 @@ public class PlayerController : MonoBehaviour
             {
                 
                 GoldManager.Instance.AddGold(10);
-                Debug.Log("add gold");
             }
 
             Destroy(other.gameObject);
