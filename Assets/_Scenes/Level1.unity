@@ -488,6 +488,56 @@ Transform:
   m_Father: {fileID: 2011806596}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1627598261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1627598263}
+  - component: {fileID: 1627598262}
+  m_Layer: 0
+  m_Name: GameManger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1627598262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627598261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59de7494ee577df4ba1b3c3c654db054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentAnswer: VIETNAM
+  currentLetterIndex: 0
+  letterPanel: {fileID: 0}
+  letterSlotPrefab: {fileID: 0}
+  gameActive: 1
+  letterSLots: []
+--- !u!4 &1627598263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627598261}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.08912772, y: -1.531086, z: 0.033765733}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2011806594
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,7 +571,33 @@ MonoBehaviour:
   healthPrefab: {fileID: 1056004064941128014, guid: 053ab8ef871f5524e9ae804e33f5de5d, type: 3}
   goldPrefab: {fileID: 5063889517001565464, guid: 84b0b07340551a248ac00751dfc0379f, type: 3}
   spawnPoint: {fileID: 1281880397}
-  letterSprites: []
+  letterSprites:
+  - {fileID: 21300000, guid: 63dad3c74037d154991d89528be5bb68, type: 3}
+  - {fileID: 21300000, guid: 0e0f18e8e4d46ef41b7ba01de05d9f99, type: 3}
+  - {fileID: 21300000, guid: 13ca1f1aa3cdb7f49a05436ff7eddf10, type: 3}
+  - {fileID: 21300000, guid: a7dd31b323e640d44b292baede6fcb5d, type: 3}
+  - {fileID: 21300000, guid: 92bffbc0d6f9f3a4f8a127b011b61c5d, type: 3}
+  - {fileID: 21300000, guid: 7c4d8a6616917ed498d817e7ba5052eb, type: 3}
+  - {fileID: 21300000, guid: b3c73ecc53d71294b968a1cee0b5b4a6, type: 3}
+  - {fileID: 21300000, guid: 50b315d4d662cc5439442a33d89933be, type: 3}
+  - {fileID: 21300000, guid: cec0c366c99dcf14d9e61a11e6d4ac34, type: 3}
+  - {fileID: 21300000, guid: df13c83dc5397894c8d5663e7e809621, type: 3}
+  - {fileID: 21300000, guid: 83120f9187fb1b14089d0db22f36b367, type: 3}
+  - {fileID: 21300000, guid: 61d20bac93cccfa45ad131635080079e, type: 3}
+  - {fileID: 21300000, guid: d9d4c906574d2a54caa28aea1df33cc8, type: 3}
+  - {fileID: 21300000, guid: 4d1c7aeec9d5f5c47a8347abe64dbcbd, type: 3}
+  - {fileID: 21300000, guid: 84f315fa7b1ad1845a4d67127f65a540, type: 3}
+  - {fileID: 21300000, guid: f923f8082e8a35942a0bcbc691738fbf, type: 3}
+  - {fileID: 21300000, guid: 1823f9425286f9b4d9a74d3119186c07, type: 3}
+  - {fileID: 21300000, guid: 51b73baf8c3609146b24cf52f191b688, type: 3}
+  - {fileID: 21300000, guid: 15a49375bed711741a42073a2f89ca2f, type: 3}
+  - {fileID: 21300000, guid: 4d80b5ba7c11e73458d93827720f4f28, type: 3}
+  - {fileID: 21300000, guid: e67f64b817600364b99b80aab79d79db, type: 3}
+  - {fileID: 21300000, guid: 1f7eb45b40eab494085b5b03c8a14987, type: 3}
+  - {fileID: 21300000, guid: ef6be02ab9c1a404da15034dd67c8216, type: 3}
+  - {fileID: 21300000, guid: 044f0b59f3a2a6646b49d53bb24fc38f, type: 3}
+  - {fileID: 21300000, guid: ef0b11d1ace71ab468d6ce3d220f350c, type: 3}
+  - {fileID: 21300000, guid: 1af0eb549167fe94e9740d3c12185028, type: 3}
   spawnIntervalMin: 1
   spawnIntervalMax: 1
 --- !u!4 &2011806596
