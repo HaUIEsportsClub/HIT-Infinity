@@ -53,7 +53,7 @@ public class UIManager : MonoBehaviour
 
     public IEnumerator ShowWinPanelDelayed(float delay, string message, bool showNextButton)
     {
-        
+        return null;
     }
 
     public void ShowHintPanel()

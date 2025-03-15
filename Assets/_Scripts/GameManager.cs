@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void CheckLetter(GameManager letterObj)
+    public void CheckLetter(GameManager letterObj)
     {
        
     }
