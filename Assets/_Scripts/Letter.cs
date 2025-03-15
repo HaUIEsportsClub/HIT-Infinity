@@ -1,16 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 
 public class Letter : MonoBehaviour
 {
-    private Sprite m_LetterSprite;
-    private char m_LetterChar;
-    
+    public SpriteRenderer m_LetterSprite;
+    public char m_LetterChar;
 
     public void SetLetter(Sprite letterSprite, char letterChar)
     {
-        m_LetterSprite = letterSprite;
+        m_LetterSprite.sprite = letterSprite;
         m_LetterChar = letterChar;
+    }
+
+    public void StopMoving()
+    {
+        MovingItem movingItem = GetComponent<MovingItem>();
+        if (movingItem != null)
+        {
+            movingItem.StopMovement();
+        }
     }
 }

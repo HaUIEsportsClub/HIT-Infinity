@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GoldManager : MonoBehaviour
@@ -7,34 +5,43 @@ public class GoldManager : MonoBehaviour
     public static GoldManager Instance;
     public int gold = 0;
 
-    // Start is called before the first frame update
     private void Awake()
     {
-        
-    }
-    void Start()
-    {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        LoadGold();
+       
     }
 
     public void AddGold(int amount)
     {
-        
+        gold += amount;
+        SaveGold();
+        if (UIManager.Instance != null)
+        {
+            UIManager.Instance.UpdateGoldUI(gold);
+        }
     }
 
     public void SaveGold()
     {
-        
+        PlayerPrefs.SetInt("Gold", gold);
+        PlayerPrefs.Save();
     }
 
     public void LoadGold()
     {
-        
+        gold = PlayerPrefs.GetInt("Gold", 0);
     }
 }

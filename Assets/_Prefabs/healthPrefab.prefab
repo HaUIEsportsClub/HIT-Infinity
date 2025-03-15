@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3508283535964861591}
   - component: {fileID: 2196145677260397053}
   m_Layer: 0
-  m_Name: healthPrefab
-  m_TagString: Untagged
+  m_Name: HealthPrefab
+  m_TagString: Health
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0.22697547, b: 0, a: 1}
   m_FlipX: 0
@@ -124,4 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52fcf822ce9f60a4594cc23e67ec981f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 10
