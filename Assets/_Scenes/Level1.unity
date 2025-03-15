@@ -255,7 +255,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 35
+  m_Spacing: 15
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -1465,13 +1465,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 427680459}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa02cb5349cb08048bc68697d2cd5699, type: 3}
+  m_Script: {fileID: 11500000, guid: 86249b5dc2239c34d8a69c84003076d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 25
   health: 5
   maxHealth: 5
-  rotationSpeed: -200
+  rotationSpeed: -250
 --- !u!1 &448118390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,7 +1519,7 @@ MonoBehaviour:
   currentAnswer: VIETNAM
   currentLetterIndex: 0
   letterPanel: {fileID: 101920341}
-  letterSlotPrefab: {fileID: 0}
+  letterSlotPrefab: {fileID: 7538421079437240607, guid: 8ba97d14b5721724bb2f84bae36ecfe9, type: 3}
   gameActive: 1
 --- !u!1 &485803744
 GameObject:
@@ -1776,7 +1776,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 534375886}
-  - component: {fileID: 534375885}
+  - component: {fileID: 534375887}
   m_Layer: 0
   m_Name: ItemSpawner
   m_TagString: Untagged
@@ -1784,7 +1784,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &534375885
+--- !u!4 &534375886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534375883}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.1381266, y: -0.2234962, z: -1.3461711}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1784743723}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534375887
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1793,12 +1809,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 534375883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4c34acf21ae0ef48ae5bd2d97401d09, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e6f2cce8761bce40b5453940c9212f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letterPrefab: {fileID: 2687136064665186171, guid: 93db8e64d415dd845a5249d8447827b9, type: 3}
-  healthPrefab: {fileID: 8870731940773573690, guid: f430bac639bc17b458aac007554481e0, type: 3}
-  goldPrefab: {fileID: 7778896015764525343, guid: c1b6ab7cd43990a4bbbd7dbfe8aafb3e, type: 3}
+  letterPrefab: {fileID: 1813497953813799573, guid: cbbc133e30fc1994293b8d4f0e5aaaed, type: 3}
+  healthPrefab: {fileID: 1056004064941128014, guid: 053ab8ef871f5524e9ae804e33f5de5d, type: 3}
+  goldPrefab: {fileID: 5063889517001565464, guid: 84b0b07340551a248ac00751dfc0379f, type: 3}
   spawnPoint: {fileID: 1784743723}
   letterSprites:
   - {fileID: 21300000, guid: 63dad3c74037d154991d89528be5bb68, type: 3}
@@ -1827,24 +1843,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 044f0b59f3a2a6646b49d53bb24fc38f, type: 3}
   - {fileID: 21300000, guid: ef0b11d1ace71ab468d6ce3d220f350c, type: 3}
   - {fileID: 21300000, guid: 1af0eb549167fe94e9740d3c12185028, type: 3}
-  spawnIntervalMin: 0.8
-  spawnIntervalMax: 1.5
---- !u!4 &534375886
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534375883}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1381266, y: -0.2234962, z: -1.3461711}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1784743723}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  spawnIntervalMin: 1
+  spawnIntervalMax: 1
 --- !u!1 &570403457
 GameObject:
   m_ObjectHideFlags: 0
