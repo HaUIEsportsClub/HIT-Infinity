@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class LevelSelection : MonoBehaviour
 {
@@ -29,11 +28,11 @@ public class LevelSelection : MonoBehaviour
             levelButtons[i].onClick.RemoveAllListeners();
 
            
-            // if (LevelManager.Instance.IsLevelUnlocked(levelIndex))
-            // {
-            //     SetButtonUnlocked(i,levelIndex);
-            // }
-            // else SetButtonLocked(i);
+            if (LevelManager.Instance.IsLevelUnlocked(levelIndex))
+            {
+                SetButtonUnlocked(i,levelIndex);
+            }
+            else SetButtonLocked(i);
             
         }
     }
@@ -54,7 +53,7 @@ public class LevelSelection : MonoBehaviour
    
     private void OnLevelButtonClick(int level)
     {
-        //LevelManager.Instance.LoadLevel(level);
+        LevelManager.Instance.LoadLevel(level);
     }
     public void ResetGameData()
     {
