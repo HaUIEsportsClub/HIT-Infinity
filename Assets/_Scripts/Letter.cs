@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Letter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Sprite m_LetterSprite;
+    private char m_LetterChar;
+    
 
-    // Update is called once per frame
-    void Update()
+    public void SetLetter(Sprite letterSprite, char letterChar)
     {
-        
+        m_LetterSprite = letterSprite;
+        m_LetterChar = letterChar;
     }
 }
