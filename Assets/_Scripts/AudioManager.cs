@@ -10,7 +10,14 @@ public class AudioManager : MonoBehaviour
     {
         InGame,
         GameSelection,
-        LoadingScene
+        LoadingScene,
+        Heal,
+        InCorrect,
+        Jump,
+        Win,
+        Wrong,
+        CorrectAnswer,
+        GameOver
     }
     [Serializable]
     public class SoundSource
@@ -31,6 +38,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource m_SFXSource;
     [Header("______________Sound_____________")]
     [SerializeField] private List<SoundSource> m_SoundSources;
+    [Header("__________Data__________")]
+    [SerializeField] private float m_SoundVolumeRate = 1;
+    [SerializeField] private float m_SFXVolumeRate = 1;
     private void LoadComponent()
     {
         if (m_SoundSource == null)
@@ -63,6 +73,7 @@ public class AudioManager : MonoBehaviour
                 m_SFXSource = sfxSourceTrf.AddComponent<AudioSource>();
             }
         }
+        SetAudioClipsName();
     }
 
     private void SetAudioClipsName()
@@ -74,7 +85,14 @@ public class AudioManager : MonoBehaviour
 
         for (int i = 0; i < nameList.Length; ++i)
         {
-            
+            if (i < m_SoundSources.Count) m_SoundSources[i].Name = nameList[i];
+            else
+            {
+                m_SoundSources.Add(new SoundSource()
+                {
+                    Name = nameList[i],
+                });
+            }
         }
     }
 
@@ -92,5 +110,24 @@ public class AudioManager : MonoBehaviour
         }
         else Destroy(gameObject);
         LoadComponent();
+    }
+
+    private void OnValidate()
+    {
+        SetAudioClipsName();
+    }
+
+    public static void PlayBackgroundSound(SoundId soundId)
+    {
+        Instance.m_SoundSource.Stop();
+
+        Instance.m_SoundSource.clip = Instance.m_SoundSources[(int)soundId].Sound;
+        Instance.m_SoundSource.volume = Instance.m_SoundVolumeRate;
+        Instance.m_SoundSource.Play();
+    }
+
+    public static void PlaySound(SoundId soundId)
+    {
+        Instance.m_SoundSource.PlayOneShot(Instance.m_SoundSources[(int)(soundId)].Sound, Instance.m_SFXVolumeRate);
     }
 }
