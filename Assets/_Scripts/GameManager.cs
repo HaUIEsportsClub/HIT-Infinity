@@ -1,8 +1,9 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,71 +11,99 @@ public class GameManager : MonoBehaviour
 
     public string currentAnswer= "VIETNAM";
     public int currentLetterIndex=0;
+   
     public Transform letterPanel;
     public GameObject letterSlotPrefab;
-
     public bool gameActive = true; 
-    public Transform[] letterSLots;
+    private Transform[] letterSlots;
 
-    private void Awake()
+    void Awake()
     {
         Instance = this;
     }
-    
 
-    // Start is called before the first frame update
     void Start()
     {
-        SetUpLetterPanel();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+    
+      
+        SetupLetterPanel();
         
     }
-
-    private void SetUpLetterPanel()
+    
+    void SetupLetterPanel()
     {
         int length = currentAnswer.Length;
-        letterSLots = new Transform[length];
+        letterSlots = new Transform[length];
+
         for (int i = 0; i < length; i++)
         {
             GameObject slotObj = Instantiate(letterSlotPrefab, letterPanel);
-            letterSLots[i] = slotObj.transform;
+            letterSlots[i] = slotObj.transform;
         }
     }
 
-    public void CheckLetter(GameManager letterObj)
+    public void CheckLetter(GameObject letterObj)
+    {
+        Letter letterScript = letterObj.GetComponent<Letter>();
+
+
+        char pickedChar = letterScript.m_LetterChar;
+        char neededChar = currentAnswer[currentLetterIndex];
+
+        if (pickedChar == neededChar)
+        {
+            Transform targetSlot = letterSlots[currentLetterIndex];
+
+            letterObj.transform
+                .DOMove(targetSlot.position, 0.5f)
+                .OnComplete(() =>
+                {
+                    letterObj.transform.SetParent(targetSlot);
+                    letterScript.StopMoving();
+                });
+
+            currentLetterIndex++;
+
+            if (currentLetterIndex >= currentAnswer.Length)
+            {
+                HandleWin();
+              
+            }
+        }
+        else
+        {
+            if (PlayerController.Instance != null)
+            {
+                PlayerController.Instance.TakeDamage();
+            }
+
+            Destroy(letterObj);
+        }
+    }
+    private void HandleWin()
+    {
+    }
+
+    public void BuyHint()
+    {
+        
+    }
+    public void RetryLevel()
     {
        
     }
 
-    public void HandleWin()
+    public void GoToLevelSelection()
     {
-        
-    }
-    private void BuyHint()
-    {
-        
+       
     }
 
-    public void RetryLevel()
+
+    public void LoadNextLevel()
     {
-        
+       
     }
 
-    public void GotoLevelSelection()
-    {
-        
-    }
-
-    public void LoadLevelIndex()
-    {
-        
-    }
-    
-
+  
    
-    
 }

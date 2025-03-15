@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,19 +8,15 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded = true;
     
-    
-    public int health = 5;    
-    public int maxHealth = 5;   // Máu tối đa là 5
-    
+    public int health = 5;
+    public int maxHealth = 5;
     public float rotationSpeed = -250f;
    
     void Awake()
     {
-        
         if (Instance == null)
         {
             Instance = this;
-           
         }
         else
         {
@@ -32,7 +27,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
         if (UIManager.Instance != null)
         {
             UIManager.Instance.UpdateHealthUI(health);
@@ -45,15 +39,14 @@ public class PlayerController : MonoBehaviour
         if (isGrounded && (Input.GetKeyDown(KeyCode.Space) ))
         {
             rb.velocity = Vector2.up * jumpForce;
-            isGrounded = false;  
+            isGrounded = false;
         }
 
-          
             transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
         
     }
     
-    
+  
    
     public void TakeDamage()
     {
@@ -62,20 +55,20 @@ public class PlayerController : MonoBehaviour
         {
             UIManager.Instance.UpdateHealthUI(health);
         }
-       
 
         if (health <= 0)
         {
-           
             GameManager.Instance.gameActive = false;
             UIManager.Instance.gameOverPanel.SetActive(true);
         }
     }
-   
-    void OnCollisionEnter2D(Collision2D collision)
+
+ 
+
+    void OnCollisionEnter2D(Collision2D other)
     {
         
-        if (collision.gameObject.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
         }
