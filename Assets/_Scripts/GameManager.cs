@@ -11,12 +11,10 @@ public class GameManager : MonoBehaviour
 
     public string currentAnswer= "VIETNAM";
     public int currentLetterIndex=0;
-   
     public Transform letterPanel;
     public GameObject letterSlotPrefab;
     public bool gameActive = true; 
     private Transform[] letterSlots;
-
     void Awake()
     {
         Instance = this;
@@ -39,8 +37,6 @@ public class GameManager : MonoBehaviour
         {
             GameObject slotObj = Instantiate(letterSlotPrefab, letterPanel);
             letterSlots[i] = slotObj.transform;
-            
-            Debug.Log("spawn slot");
         }
     }
 
@@ -84,26 +80,63 @@ public class GameManager : MonoBehaviour
     }
     private void HandleWin()
     {
+      
+        gameActive = false;
+        UIManager.Instance.OpenHintPanelButton.interactable = false;
+        UIManager.Instance.pauseButton.interactable = false;
+        
+
+        int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        if (currentLevelIndex + 1 < SceneManager.sceneCountInBuildSettings)
+        {
+         
+            LevelManager.Instance.UnlockLevel(currentLevelIndex + 1);
+            StartCoroutine(UIManager.Instance.ShowWinPanelDelayed(1f, "Bạn đã chiến thắng!", true));
+        }
+        else
+        {
+            StartCoroutine(UIManager.Instance.ShowWinPanelDelayed(1f, "Bạn đã chiến thắng trò chơi!", false));
+        }
+
+       
     }
 
     public void BuyHint()
     {
-        
+        int currentGold = GoldManager.Instance.gold;
+        if (currentGold >= 10)
+        {
+            GoldManager.Instance.AddGold(-10);
+
+
+            char correctLetter = currentAnswer[currentLetterIndex];
+
+            GameObject hintLetterObj = ItemSpawner.Instance.SpawnHintLetter(correctLetter);
+
+          
+            CheckLetter(hintLetterObj);
+            UIManager.Instance.HideHintPanel();
+        }
     }
     public void RetryLevel()
     {
-       
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void GoToLevelSelection()
     {
-       
+        Time.timeScale = 1;
+        SceneManager.LoadScene("LevelSelection");
     }
 
 
     public void LoadNextLevel()
     {
-       
+        int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+
+
+        SceneManager.LoadScene(currentLevelIndex + 1);
     }
 
   
