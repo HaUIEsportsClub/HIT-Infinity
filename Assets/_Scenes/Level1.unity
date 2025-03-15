@@ -3875,6 +3875,8 @@ MonoBehaviour:
     m_Sound: {fileID: 8300000, guid: a5705da10880b5346959c1eaf98ddd63, type: 3}
   - Name: GameOver
     m_Sound: {fileID: 8300000, guid: 9e2509e399c0c8c49a8b988b95047d63, type: 3}
+  - Name: Coin
+    m_Sound: {fileID: 0}
   m_SoundVolumeRate: 1
   m_SFXVolumeRate: 1
 --- !u!4 &1407187663
@@ -6096,7 +6098,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -37.775158, y: 23.330032}
+  m_AnchoredPosition: {x: -37.775146, y: 23.330017}
   m_SizeDelta: {x: -291.62964, y: -396.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2131640865
