@@ -8,23 +8,24 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public string currentAnswer="CLBHIT";
-    public int currentLetterIndex;
+    public string currentAnswer= "VIETNAM";
+    public int currentLetterIndex=0;
     public Transform letterPanel;
     public GameObject letterSlotPrefab;
 
+    public bool gameActive = true; 
     public Transform[] letterSLots;
 
     private void Awake()
     {
-        
+        Instance = this;
     }
     
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetUpLetterPanel();
     }
 
     // Update is called once per frame
@@ -35,32 +36,45 @@ public class GameManager : MonoBehaviour
 
     private void SetUpLetterPanel()
     {
-        
+        int length = currentAnswer.Length;
+        letterSLots = new Transform[length];
+        for (int i = 0; i < length; i++)
+        {
+            GameObject slotObj = Instantiate(letterSlotPrefab, letterPanel);
+            letterSLots[i] = slotObj.transform;
+        }
     }
 
-    private void CheckLetter()
+    private void CheckLetter(GameManager letterObj)
+    {
+       
+    }
+
+    public void HandleWin()
     {
         
     }
-
     private void BuyHint()
     {
         
     }
 
-    private void RetryLevel()
+    public void RetryLevel()
     {
         
     }
 
-    private void GotoLevelSelection()
+    public void GotoLevelSelection()
     {
         
     }
 
-    private void NextLevel()
+    public void LoadLevelIndex()
     {
         
     }
+    
+
+   
     
 }
