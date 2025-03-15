@@ -17,7 +17,8 @@ public class AudioManager : MonoBehaviour
         Win,
         Wrong,
         CorrectAnswer,
-        GameOver
+        GameOver,
+        Coin
     }
     [Serializable]
     public class SoundSource
