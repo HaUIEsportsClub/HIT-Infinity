@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     public bool IsLevelUnlocked(int level)
     {
-        
+        return false;
     }
 
     public void UnlockLevel(int level)
