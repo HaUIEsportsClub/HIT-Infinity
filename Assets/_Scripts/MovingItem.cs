@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class MovingItem : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float moveSpeed = 2f;
+    private bool isMoving = true; 
+    public void StopMovement()
+    {
+        isMoving = false;
+    }
     void Start()
     {
         
