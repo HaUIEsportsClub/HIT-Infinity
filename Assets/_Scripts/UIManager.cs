@@ -8,19 +8,21 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
     [Header("UI Panels")]
-    public GameObject winPanel;      
-    public GameObject gameOverPanel; 
-    public GameObject pausePanel;     
-    public GameObject hintPanel;      
+    public GameObject winPanel;
+    public GameObject gameOverPanel;
+    public GameObject pausePanel;
+    public GameObject hintPanel;
+    public GameObject settingPanel;
 
     [Header("UI Elements")]
-    public Button BuyHintButton;            
+    public Button BuyHintButton;
     public Button OpenHintPanelButton;
     public TextMeshProUGUI hintPriceText;
     public TextMeshProUGUI winText;
     public TextMeshProUGUI goldText;
     public Button nextLevelButton;
     public Button pauseButton;
+    public Button settingButton;
     [Header("Health UI")]
     public Image[] heartIcons;
 
@@ -52,7 +54,7 @@ public class UIManager : MonoBehaviour
     }
     public void UpdateHealthUI(int health)
     {
-       
+
 
         for (int i = 0; i < heartIcons.Length; i++)
         {
@@ -76,12 +78,13 @@ public class UIManager : MonoBehaviour
         }
     }
     public IEnumerator ShowWinPanelDelayed(float delay, string message, bool showNextButton)
-    { 
+    {
         yield return new WaitForSeconds(delay);
         winText.text = message;
         nextLevelButton.gameObject.SetActive(showNextButton);
         winPanel.SetActive(true);
     }
+    //Hint Panel
     public void ShowHintPanel()
     {
         hintPanel.SetActive(true);
@@ -107,6 +110,7 @@ public class UIManager : MonoBehaviour
         hintPanel.SetActive(false);
         Time.timeScale = 1;
     }
+    //PausePanel
     public void ShowPausePanel()
     {
         pausePanel.SetActive(true);
@@ -125,4 +129,17 @@ public class UIManager : MonoBehaviour
         else
             ShowPausePanel();
     }
+    //Setting Panel
+    public void ShowSettingPanel()
+    {
+        settingPanel.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void HideSettingPanel()
+    {
+        settingPanel.SetActive(false) ;
+        Time.timeScale = 1;
+    }
+
 }
