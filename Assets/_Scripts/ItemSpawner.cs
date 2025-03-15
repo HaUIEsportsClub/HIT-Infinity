@@ -37,7 +37,7 @@ public class ItemSpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(spawnIntervalMin, spawnIntervalMax));
 
-            //if (GameManager.Instance.gameActive == false)   yield break;
+            if (GameManager.Instance.gameActive == false)   yield break;
 
             
             float spawnRoll = Random.value; 
