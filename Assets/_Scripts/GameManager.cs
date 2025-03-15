@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
 
         if (pickedChar == neededChar)
         {
+            AudioManager.PlaySound(AudioManager.SoundId.CorrectAnswer);
             Transform targetSlot = letterSlots[currentLetterIndex];
 
             letterObj.transform
@@ -72,6 +73,7 @@ public class GameManager : MonoBehaviour
         {
             if (PlayerController.Instance != null)
             {
+                AudioManager.PlaySound(AudioManager.SoundId.InCorrect);
                 PlayerController.Instance.TakeDamage();
             }
 
@@ -80,7 +82,7 @@ public class GameManager : MonoBehaviour
     }
     private void HandleWin()
     {
-      
+        AudioManager.PlaySound(AudioManager.SoundId.Win);
         gameActive = false;
         UIManager.Instance.OpenHintPanelButton.interactable = false;
         UIManager.Instance.pauseButton.interactable = false;
