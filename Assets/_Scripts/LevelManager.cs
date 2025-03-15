@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -8,26 +7,45 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        
-    }
-    void Start()
-    {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if(Instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
     public bool IsLevelUnlocked(int level)
     {
-        return false;
+        int defaultValue;
+        if (level == 1)
+        {
+            defaultValue = 1;
+        }
+        else
+        {
+            defaultValue = 0;
+        }
+        int unlocked = PlayerPrefs.GetInt("Level_" + level + "_Unlocked", defaultValue);
+        return (unlocked == 1);
     }
 
     public void UnlockLevel(int level)
     {
-        
+        PlayerPrefs.SetInt("Level_" + level + "_Unlocked", 1);
+        PlayerPrefs.Save();
     }
 
     public void LoadLevel(int level)
     {
-        
+        if (IsLevelUnlocked(level))
+        {
+            SceneManager.LoadScene("Level" + level);
+        }
     }
+ 
+
 }
