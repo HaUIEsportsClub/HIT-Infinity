@@ -10,14 +10,22 @@ public class MovingItem : MonoBehaviour
     {
         isMoving = false;
     }
-    void Start()
-    {
+    
+     
         
-    }
+         void Update()
+         {
+             if (GameManager.Instance != null && !GameManager.Instance.gameActive)
+                 return;
+        
+             if (!isMoving)
+                 return;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+             transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+
+             if (transform.position.x < -10f)
+             {
+                 Destroy(gameObject);
+             }
+         }
 }

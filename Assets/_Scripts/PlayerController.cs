@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-       
+        if (GameManager.Instance.gameActive == false) return;
         if (isGrounded && (Input.GetKeyDown(KeyCode.Space) ))
         {
             rb.velocity = Vector2.up * jumpForce;

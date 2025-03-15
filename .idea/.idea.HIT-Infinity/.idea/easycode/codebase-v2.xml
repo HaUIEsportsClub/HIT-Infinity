@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="com.obiscr.chatgpt.settings.EasyCodeState">
+    <option name="projectFiles" value="$PROJECT_DIR$/Assets/_Scripts/AudioManager.cs;D:/ANHNGUYENCODER/HIT-Infinity/Assets/_Scripts/GameManager.cs;D:/ANHNGUYENCODER/HIT-Infinity/Assets/_Scripts/GoldManager.cs;D:/ANHNGUYENCODER/HIT-Infinity/Assets/_Scripts/ItemSpawner.cs;D:/ANHNGUYENCODER/HIT-Infinity/Assets/_Scripts/Letter.cs;D:/ANHNGUYENCODER/HIT-Infinity/Assets/_Scripts/LevelManager.cs;D:/ANHNGUYENCODER/HIT-Infinity/Assets/_Scripts/LevelSelection.cs;D:/ANHNGUYENCODER/HIT-Infinity/Assets/_Scripts/MovingItem.cs;D:/ANHNGUYENCODER/HIT-Infinity/Assets/_Scripts/PlayerController.cs;D:/ANHNGUYENCODER/HIT-Infinity/Assets/_Scripts/UIManager.cs;D:/ANHNGUYENCODER/HIT-Infinity/Packages/manifest.json;D:/ANHNGUYENCODER/HIT-Infinity/Packages/packages-lock.json;D:/ANHNGUYENCODER/HIT-Infinity/README.md" />
+  </component>
+</project>
