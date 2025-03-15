@@ -4,14 +4,29 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static LevelManager Instance;
+
+    private void Awake()
+    {
+        
+    }
     void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
+    public bool IsLevelUnlocked(int level)
+    {
+        
+    }
+
+    public void UnlockLevel(int level)
+    {
+        
+    }
+
+    public void LoadLevel(int level)
     {
         
     }
