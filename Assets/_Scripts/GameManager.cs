@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
         {
             GameObject slotObj = Instantiate(letterSlotPrefab, letterPanel);
             letterSlots[i] = slotObj.transform;
+            
+            Debug.Log("spawn slot");
         }
     }
 
