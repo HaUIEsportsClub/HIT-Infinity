@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ShopCtrl : MonoBehaviour
@@ -27,6 +28,9 @@ public class ShopCtrl : MonoBehaviour
     [SerializeField] private ShopData m_ShopData;
     [Header("__________Confirm__________")]
     [SerializeField] private ConfirmCtrl m_ConfirmCtrl;
+
+    [Header("__________Exit_____________")] [SerializeField]
+    private Button m_ExitBtn;
     [Header("__________Holder__________")]
     [SerializeField] private List<ProductInfor> m_Skins;
     [SerializeField] private List<ProductInfor> m_Backgrounds;
@@ -46,7 +50,12 @@ public class ShopCtrl : MonoBehaviour
         
         FirstLoadSkin();
         FirstLoadBackground();
-        
+        UpdateSkinShop();
+       
+        m_ExitBtn.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene("LevelSelection");
+        });
         
     }
 
@@ -78,11 +87,13 @@ public class ShopCtrl : MonoBehaviour
             if(i > m_Backgrounds.Count) return;
             m_Backgrounds[i].productText.text = backgroundParams[i].Cost;
             m_Backgrounds[i].isUnlock = backgroundParams[i].IsUnlock;
+            
             if(m_Backgrounds[i].isUnlock) m_Backgrounds[i].lockImg.gameObject.SetActive(false);
             else m_Backgrounds[i].lockImg.gameObject.SetActive(true);
+            
             m_Backgrounds[i].productImg.sprite =backgroundParams[i].ProductSprite;
-            var i1 = i;
-            m_Backgrounds[i].productBtn.onClick.AddListener(()=>ClickBackGround(i1));
+            int backgroundId = i;
+            m_Backgrounds[i].productBtn.onClick.AddListener(()=>ClickBackGround(backgroundId));
            
         }
     }
@@ -105,6 +116,14 @@ public class ShopCtrl : MonoBehaviour
                     lockImg = skinItem.Find("lock").GetComponent<Image>()
                 });
             }
+            
+        }
+
+        if (m_ExitBtn == null) m_ExitBtn = transform.Find("CLOSE").GetComponent<Button>();
+        if (m_ConfirmCtrl == null)
+        {
+            m_ConfirmCtrl = transform.GetComponentInChildren<ConfirmCtrl>();
+            m_ConfirmCtrl.gameObject.SetActive(false);
         }
         
 
@@ -130,7 +149,8 @@ public class ShopCtrl : MonoBehaviour
     }
     private void ClickSkin(int skinId)
     {
-        if (m_Skins[skinId].isUnlock) ChooseSkin(skinId);
+        int unlock = PlayerPrefs.GetInt("Skin_" + skinId + "_unlock", 0);
+        if (unlock == 1) ChooseSkin(skinId);
         else
         {
             if (m_ConfirmCtrl != null)
@@ -144,7 +164,8 @@ public class ShopCtrl : MonoBehaviour
 
     private void ClickBackGround(int backGroundId)
     {
-        if (m_Backgrounds[backGroundId].isUnlock) ChooseBackground(backGroundId);
+        int unlock = PlayerPrefs.GetInt("Background_" + backGroundId + "unlock",0);
+        if (unlock == 1) ChooseBackground(backGroundId);
         else
         {
             if (m_ConfirmCtrl != null)
@@ -188,6 +209,7 @@ public class ShopCtrl : MonoBehaviour
 
     private void BuyBackground(int groundId)
     {
+        
         m_Backgrounds[groundId].isUnlock = true;
         m_Backgrounds[groundId].lockImg.gameObject.SetActive(false);
         m_Backgrounds[groundId].productText.gameObject.SetActive(false);
@@ -198,13 +220,15 @@ public class ShopCtrl : MonoBehaviour
 
     private void ChooseSkin(int skinId)
     {
-        GameManager.Instance.SkinId = skinId;
+        PlayerPrefs.SetInt("SkinSelected",skinId);
+       
         //active UI choose skin
     }
 
     private void ChooseBackground(int groundId)
     {
-        GameManager.Instance.BackgroundId = groundId;
+        
+        PlayerPrefs.SetInt("BackgroundSelected",groundId);
         //active UI choose background
     }
 
@@ -216,6 +240,7 @@ public class ShopCtrl : MonoBehaviour
             if (unlock == 0)
             {
                 m_Skins[i].lockImg.gameObject.SetActive(true);
+                m_Skins[i].productText.gameObject.SetActive(true);
             }
             else
             {
@@ -233,9 +258,11 @@ public class ShopCtrl : MonoBehaviour
             if (unlock == 0)
             {
                 m_Backgrounds[i].lockImg.gameObject.SetActive(true);
+                m_Backgrounds[i].productText.gameObject.SetActive(true);
             }
             else
             {
+                Debug.Log(i);
                 m_Backgrounds[i].lockImg.gameObject.SetActive(false);
                 m_Backgrounds[i].productText.gameObject.SetActive(false);
             }

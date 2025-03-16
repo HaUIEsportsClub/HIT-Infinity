@@ -20,9 +20,7 @@ public class GameManager : MonoBehaviour
     [Header("__________From shop__________")]
     public SpriteRenderer BackGroundSR;
     public ShopData shopData;
-    public int SkinId = 0;
-
-    public int BackgroundId = 0;
+    
     void Awake()
     {
         Instance = this;
@@ -37,8 +35,15 @@ public class GameManager : MonoBehaviour
 
         if (shopData != null)
         {
+            int SkinId = PlayerPrefs.GetInt("SkinSelected", 0);
             PlayerController.Instance.PlayerSR.sprite = shopData.SkinParams[SkinId].ProductSprite;
-            if (BackGroundSR != null) BackGroundSR.sprite = shopData.BackgroundParams[BackgroundId].ProductSprite;
+            
+            if (BackGroundSR != null)
+            {
+                int BackgroundId = PlayerPrefs.GetInt("BackgroundSelected", 0);
+               
+                BackGroundSR.sprite = shopData.BackgroundParams[BackgroundId].ProductSprite;
+            }
         }
         
     }
