@@ -59,7 +59,10 @@ public class LevelSelection : MonoBehaviour
 
     public void LoadShop()
     {
+        
         SceneManager.LoadScene("Shopping");
+        Debug.Log("he");
+        AudioManager.PlaySound(AudioManager.SoundId.Shopping);
 
     }
     public void ResetGameData()

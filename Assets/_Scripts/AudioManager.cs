@@ -20,8 +20,9 @@ public class AudioManager : MonoBehaviour
         GameOver,
         Coin,
         Time,
-        Loading
-        
+        Loading,
+        Shopping
+
     }
     [Serializable]
     public class SoundSource
