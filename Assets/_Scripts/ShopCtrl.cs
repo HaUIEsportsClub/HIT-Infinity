@@ -194,7 +194,7 @@ public class ShopCtrl : MonoBehaviour
             if (m_ConfirmCtrl != null)
             {
                 m_ConfirmCtrl.gameObject.SetActive(true);
-                if (!MinusCoin(int.Parse(m_ShopData.SkinParams[skinId].Cost)))
+                if (!IsEnoughCoin(int.Parse(m_ShopData.SkinParams[skinId].Cost)))
                 {
                     m_ConfirmCtrl.GrayConfirm();
                 }
@@ -213,7 +213,7 @@ public class ShopCtrl : MonoBehaviour
         {
             if (m_ConfirmCtrl != null)
             {
-                if (!MinusCoin(int.Parse(m_ShopData.BackgroundParams[backGroundId].Cost)))
+                if (!IsEnoughCoin(int.Parse(m_ShopData.BackgroundParams[backGroundId].Cost)))
                 {
                     m_ConfirmCtrl.GrayConfirm();
                 }
@@ -368,6 +368,16 @@ public class ShopCtrl : MonoBehaviour
                 Debug.Log("Không đủ tiền");
                 return false;
             }
+        }
+
+        return false;
+    }
+
+    private bool IsEnoughCoin(int amount)
+    {
+        if (GoldManager.Instance != null)
+        {
+            return GoldManager.Instance.gold >= amount;
         }
 
         return false;
