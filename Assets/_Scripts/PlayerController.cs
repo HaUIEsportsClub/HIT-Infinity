@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = -250f;
 
     public SpriteRenderer PlayerSR;
+    public GameObject HealthEffect;
     void Awake()
     {
         if (Instance == null)
@@ -77,6 +78,11 @@ public class PlayerController : MonoBehaviour
                     UIManager.Instance.UpdateHealthUI(health);
                 }
                 Destroy(other.gameObject);
+                if (HealthEffect != null)
+                {
+                    HealthEffect.transform.position = transform.position;
+                    HealthEffect.gameObject.SetActive(true);
+                }
             }
         }
         else if (other.CompareTag("Clock"))
