@@ -26,7 +26,9 @@ public class ShopCtrl : MonoBehaviour
 
     [Header("__________Data__________")] 
     [SerializeField] private ShopData m_ShopData;
-    [Header("__________Confirm__________")]
+
+    [Header("__________Confirm__________")] 
+    [SerializeField] private GameObject m_TickPrefab;
     [SerializeField] private ConfirmCtrl m_ConfirmCtrl;
 
     [Header("__________Exit_____________")] [SerializeField]
@@ -100,7 +102,11 @@ public class ShopCtrl : MonoBehaviour
 
     private void LoadComponent()
     {
-        
+        if (m_TickPrefab == null)
+        {
+            m_TickPrefab = transform.Find("Tick").gameObject;
+            m_TickPrefab.SetActive(false);
+        }
         
         if (m_Skins == null) m_Skins = new List<ProductInfor>();
         if (m_Skins.Count <= 0)
@@ -221,19 +227,32 @@ public class ShopCtrl : MonoBehaviour
     private void ChooseSkin(int skinId)
     {
         PlayerPrefs.SetInt("SkinSelected",skinId);
-       
-        //active UI choose skin
+
+        if (m_TickPrefab != null)
+        {
+            
+            Transform tickHolder = m_Skins[skinId].lockImg.transform.parent;
+            ShowTick(tickHolder);
+            
+        }
     }
 
     private void ChooseBackground(int groundId)
     {
         
         PlayerPrefs.SetInt("BackgroundSelected",groundId);
-        //active UI choose background
+        if (m_TickPrefab != null)
+        {
+            Transform tickHolder = m_Backgrounds[groundId].lockImg.transform.parent;
+            ShowTick(tickHolder);
+            
+        }
     }
 
     public void UpdateSkinShop()
     {
+        int skinId = PlayerPrefs.GetInt("SkinSelected", 0);
+        ShowTick(m_Skins[skinId].lockImg.transform.parent);
         for (int i = 0; i < m_Skins.Count; ++i)
         {
             int unlock = PlayerPrefs.GetInt("Skin_" + i + "_unlock", 0);
@@ -252,6 +271,8 @@ public class ShopCtrl : MonoBehaviour
 
     public void UpdateBackgroundShop()
     {
+        int groundSelected = PlayerPrefs.GetInt("BackgroundSelected", 0);
+        ShowTick(m_Backgrounds[groundSelected].lockImg.transform.parent);
         for (int i = 0; i < m_Backgrounds.Count; ++i)
         {
             int unlock = PlayerPrefs.GetInt("Background_" + i + "unlock",0);
@@ -262,11 +283,18 @@ public class ShopCtrl : MonoBehaviour
             }
             else
             {
-                Debug.Log(i);
                 m_Backgrounds[i].lockImg.gameObject.SetActive(false);
                 m_Backgrounds[i].productText.gameObject.SetActive(false);
             }
         }
+    }
+
+    private void ShowTick(Transform tickHolder)
+    {
+        Vector3 position = tickHolder.position;
+        m_TickPrefab.transform.position = position;
+        m_TickPrefab.transform.SetParent(tickHolder,true);
+        m_TickPrefab.SetActive(true);
     }
     
 }
