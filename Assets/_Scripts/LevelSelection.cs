@@ -17,6 +17,7 @@ public class LevelSelection : MonoBehaviour
             PlayerPrefs.Save();
         }
         UpdateLevelButtons();
+       
     }
 
     
