@@ -133,7 +133,7 @@ public class AudioManager : MonoBehaviour
 
     public static void PlaySound(SoundId soundId)
     {
-        Instance.m_SoundSource.PlayOneShot(Instance.m_SoundSources[(int)(soundId)].Sound, Instance.m_SFXVolumeRate);
+        Instance.m_SoundSource.PlayOneShot(Instance.m_SoundSources[(int)(soundId)].Sound, Instance.m_SFXVolumeRate*0.3f);
     }
 
     public static void StopSound()
