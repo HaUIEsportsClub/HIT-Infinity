@@ -135,4 +135,9 @@ public class AudioManager : MonoBehaviour
     {
         Instance.m_SoundSource.PlayOneShot(Instance.m_SoundSources[(int)(soundId)].Sound, Instance.m_SFXVolumeRate);
     }
+
+    public static void StopSound()
+    {
+        Instance.m_SoundSource.Stop();
+    }
 }

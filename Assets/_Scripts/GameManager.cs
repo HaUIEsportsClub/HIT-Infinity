@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
+        AudioManager.StopSound();
         gameActive = false;
         AudioManager.PlaySound(AudioManager.SoundId.GameOver);
         UIManager.Instance.ShowGameOverPanel();
@@ -130,6 +131,7 @@ public class GameManager : MonoBehaviour
     private void HandleWin()
     {
         AudioManager.PlaySound(AudioManager.SoundId.Win);
+        AudioManager.StopSound();
         gameActive = false;
         UIManager.Instance.OpenHintPanelButton.interactable = false;
         UIManager.Instance.pauseButton.interactable = false;
