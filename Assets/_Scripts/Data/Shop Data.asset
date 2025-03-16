@@ -26,79 +26,79 @@ MonoBehaviour:
     IsUnlock: 0
     ProductSprite: {fileID: -1114167379, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
   - Name: dientrai
-    Cost: 750
+    Cost: 30
     IsUnlock: 0
     ProductSprite: {fileID: 30476295, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
   - Name: cuoi
-    Cost: 750
+    Cost: 30
     IsUnlock: 0
     ProductSprite: {fileID: 143518011, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
   - Name: vanlacuoi
-    Cost: 1000
+    Cost: 40
     IsUnlock: 0
     ProductSprite: {fileID: -814586501, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
   - Name: emo6
-    Cost: 1250
+    Cost: 50
     IsUnlock: 0
     ProductSprite: {fileID: 7132952, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
   - Name: emo7
-    Cost: 1250
+    Cost: 60
     IsUnlock: 0
     ProductSprite: {fileID: 23541848, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
   - Name: emo9
-    Cost: 1250
+    Cost: 70
     IsUnlock: 0
     ProductSprite: {fileID: -1755869702, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
   - Name: emo10
-    Cost: 1500
+    Cost: 80
     IsUnlock: 0
     ProductSprite: {fileID: 1107403566, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
   - Name: emo mat trai tim
-    Cost: 1500
+    Cost: 90
     IsUnlock: 0
     ProductSprite: {fileID: 739438627, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
   - Name: emo11
-    Cost: 1750
+    Cost: 120
     IsUnlock: 0
     ProductSprite: {fileID: 1306169991, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
   - Name: emo14
-    Cost: 2000
+    Cost: 150
     IsUnlock: 0
     ProductSprite: {fileID: -411232722, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
   - Name: emo15
-    Cost: 2000
+    Cost: 1000
     IsUnlock: 0
     ProductSprite: {fileID: 1329397415, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
   - Name: blue slime
-    Cost: 5000
+    Cost: 1250
     IsUnlock: 0
     ProductSprite: {fileID: 194777756, guid: 1b327f1ba1b2ecb42a81a1f94c6de5bb, type: 3}
   - Name: green slime
-    Cost: 5000
+    Cost: 1250
     IsUnlock: 0
     ProductSprite: {fileID: 1312572484, guid: 1b327f1ba1b2ecb42a81a1f94c6de5bb, type: 3}
   - Name: green slime co xuong tren dau
-    Cost: 10000
+    Cost: 1500
     IsUnlock: 0
     ProductSprite: {fileID: 292760400, guid: 1b327f1ba1b2ecb42a81a1f94c6de5bb, type: 3}
   - Name: red_slime co voi voi
-    Cost: 10000
+    Cost: 1750
     IsUnlock: 0
     ProductSprite: {fileID: 1540231221, guid: 1b327f1ba1b2ecb42a81a1f94c6de5bb, type: 3}
   - Name: con meo
-    Cost: 50000
+    Cost: 2000
     IsUnlock: 0
     ProductSprite: {fileID: 1716642246, guid: 1b327f1ba1b2ecb42a81a1f94c6de5bb, type: 3}
   - Name: con soc
-    Cost: 75000
+    Cost: 4000
     IsUnlock: 0
     ProductSprite: {fileID: 180793949, guid: ab79510977682694dacd5ac315f90e00, type: 3}
   - Name: dauxuong
-    Cost: 100000
+    Cost: 5000
     IsUnlock: 0
     ProductSprite: {fileID: -1700097593, guid: ab79510977682694dacd5ac315f90e00, type: 3}
   - Name: nuquy
-    Cost: 1000000
+    Cost: 10000
     IsUnlock: 0
     ProductSprite: {fileID: -1151863033, guid: ab79510977682694dacd5ac315f90e00, type: 3}
   BackgroundParams:
@@ -111,10 +111,10 @@ MonoBehaviour:
     IsUnlock: 0
     ProductSprite: {fileID: 21300000, guid: 19f649dced76ae644a7bde0d7dd74d2e, type: 3}
   - Name: volcano
-    Cost: 15000
+    Cost: 300
     IsUnlock: 0
     ProductSprite: {fileID: 21300000, guid: 6dec76a1163c9c84e85134860117c2c6, type: 3}
   - Name: darknight 2
-    Cost: 20000
+    Cost: 5000
     IsUnlock: 0
     ProductSprite: {fileID: 21300000, guid: 21500ed30a26b674bbe429fec461f839, type: 3}
