@@ -1576,6 +1576,7 @@ MonoBehaviour:
   health: 5
   maxHealth: 5
   rotationSpeed: -250
+  PlayerSR: {fileID: 427680462}
 --- !u!1 &448118390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,6 +1627,10 @@ MonoBehaviour:
   letterSlotPrefab: {fileID: 7538421079437240607, guid: 8ba97d14b5721724bb2f84bae36ecfe9, type: 3}
   gameActive: 1
   timeLeft: 30
+  BackGroundSR: {fileID: 587995377}
+  shopData: {fileID: 11400000, guid: df65d2fdae8cf044c9440e5010804749, type: 2}
+  SkinId: 0
+  BackgroundId: 0
 --- !u!1 &485803744
 GameObject:
   m_ObjectHideFlags: 0

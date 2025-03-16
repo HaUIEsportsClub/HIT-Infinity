@@ -130,7 +130,7 @@ public class ShopCtrl : MonoBehaviour
     }
     private void ClickSkin(int skinId)
     {
-        if (m_Skins[skinId].isUnlock) ChooseSkin();
+        if (m_Skins[skinId].isUnlock) ChooseSkin(skinId);
         else
         {
             if (m_ConfirmCtrl != null)
@@ -144,7 +144,7 @@ public class ShopCtrl : MonoBehaviour
 
     private void ClickBackGround(int backGroundId)
     {
-        if (m_Backgrounds[backGroundId].isUnlock) ChooseBackground();
+        if (m_Backgrounds[backGroundId].isUnlock) ChooseBackground(backGroundId);
         else
         {
             if (m_ConfirmCtrl != null)
@@ -180,28 +180,32 @@ public class ShopCtrl : MonoBehaviour
         
         m_Skins[skinId].isUnlock = true;
         m_Skins[skinId].lockImg.gameObject.SetActive(false);
+        m_Skins[skinId].productText.gameObject.SetActive(false);
         PlayerPrefs.SetInt("Skin_" + skinId + "_unlock",1);
         PlayerPrefs.Save();
-        ChooseSkin();
+        ChooseSkin(skinId);
     }
 
     private void BuyBackground(int groundId)
     {
         m_Backgrounds[groundId].isUnlock = true;
         m_Backgrounds[groundId].lockImg.gameObject.SetActive(false);
+        m_Backgrounds[groundId].productText.gameObject.SetActive(false);
         PlayerPrefs.SetInt("Background_" + groundId + "unlock",1);
         PlayerPrefs.Save();
-        ChooseBackground();
+        ChooseBackground(groundId);
     }
 
-    private void ChooseSkin()
+    private void ChooseSkin(int skinId)
     {
-        
+        GameManager.Instance.SkinId = skinId;
+        //active UI choose skin
     }
 
-    private void ChooseBackground()
+    private void ChooseBackground(int groundId)
     {
-        
+        GameManager.Instance.BackgroundId = groundId;
+        //active UI choose background
     }
 
     public void UpdateSkinShop()
@@ -216,6 +220,7 @@ public class ShopCtrl : MonoBehaviour
             else
             {
                 m_Skins[i].lockImg.gameObject.SetActive(false);
+                m_Skins[i].productText.gameObject.SetActive(false);
             }
         }
     }
@@ -232,6 +237,7 @@ public class ShopCtrl : MonoBehaviour
             else
             {
                 m_Backgrounds[i].lockImg.gameObject.SetActive(false);
+                m_Backgrounds[i].productText.gameObject.SetActive(false);
             }
         }
     }
