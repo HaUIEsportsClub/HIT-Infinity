@@ -33,6 +33,9 @@ public class ShopCtrl : MonoBehaviour
 
     [Header("__________Exit_____________")] [SerializeField]
     private Button m_ExitBtn;
+
+    [Header("__________Coin_____________")] [SerializeField]
+    private TextMeshProUGUI m_CoinTxt;
     [Header("__________Holder__________")]
     [SerializeField] private List<ProductInfor> m_Skins;
     [SerializeField] private List<ProductInfor> m_Backgrounds;
@@ -55,6 +58,8 @@ public class ShopCtrl : MonoBehaviour
         FirstLoadSkin(firstLoad);
         FirstLoadBackground(firstLoad);
         UpdateSkinShop();
+
+        if (GoldManager.Instance != null && m_CoinTxt != null) m_CoinTxt.text = GoldManager.Instance.gold.ToString(); 
        
         m_ExitBtn.onClick.AddListener(() =>
         {
@@ -126,6 +131,8 @@ public class ShopCtrl : MonoBehaviour
             m_TickPrefab = transform.Find("Tick").gameObject;
             m_TickPrefab.SetActive(false);
         }
+
+        if (m_CoinTxt == null) m_CoinTxt = transform.Find("Gold").GetComponentInChildren<TextMeshProUGUI>();
         
         if (m_Skins == null) m_Skins = new List<ProductInfor>();
         if (m_Skins.Count <= 0)
@@ -223,7 +230,7 @@ public class ShopCtrl : MonoBehaviour
 
     private void BuySkin(int skinId)
     {
-        
+        if(!MinusCoin(int.Parse(m_ShopData.SkinParams[skinId].Cost))) return;
         m_Skins[skinId].isUnlock = true;
         m_Skins[skinId].lockImg.gameObject.SetActive(false);
         m_Skins[skinId].productText.gameObject.SetActive(false);
@@ -234,7 +241,7 @@ public class ShopCtrl : MonoBehaviour
 
     private void BuyBackground(int groundId)
     {
-        
+        if(!MinusCoin(int.Parse(m_ShopData.BackgroundParams[groundId].Cost))) return;
         m_Backgrounds[groundId].isUnlock = true;
         m_Backgrounds[groundId].lockImg.gameObject.SetActive(false);
         m_Backgrounds[groundId].productText.gameObject.SetActive(false);
@@ -325,5 +332,24 @@ public class ShopCtrl : MonoBehaviour
         m_TickPrefab.transform.SetParent(tickHolder,true);
         m_TickPrefab.SetActive(true);
     }
-    
+
+    private bool MinusCoin(int amount)
+    {
+        if (GoldManager.Instance != null)
+        {
+            if (GoldManager.Instance.gold >= amount)
+            {
+                GoldManager.Instance.AddGold(-1 * amount);
+                m_CoinTxt.text = GoldManager.Instance.gold.ToString();
+                return true;
+            }
+            else
+            {
+                Debug.Log("Không đủ tiền");
+                return false;
+            }
+        }
+
+        return false;
+    }
 }
