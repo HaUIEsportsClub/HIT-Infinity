@@ -111,7 +111,7 @@ public class UIManager : MonoBehaviour
     //Hint Panel
     public void ShowHintPanel()
     {
-        hintPanel.transform.localScale *= 0;
+        
         hintPanel.SetActive(true);
         int currentGold = GoldManager.Instance.gold;
         if (currentGold >= 10)
@@ -127,14 +127,11 @@ public class UIManager : MonoBehaviour
             BuyHintButton.GetComponentInChildren<TextMeshProUGUI>().text = "10 Gold";
 
         }
-        hintPanel.transform.DOScale(1.2f, 0.1f).OnComplete(() =>
-        {
-            hintPanel.transform.DOScale(1f, 0.05f).OnComplete(() => { Time.timeScale = 0; });
 
-        });
-        
+        Time.timeScale = 0;
 
-        
+
+
     }
 
     public void ShowGameOverPanel()
@@ -151,12 +148,10 @@ public class UIManager : MonoBehaviour
     
     public void HideHintPanel()
     {
-        Sequence sequence = DOTween.Sequence();
+       
         Time.timeScale = 1;
-        sequence.Append(hintPanel.transform.DOScale(1.2f, 0.1f)).Append(hintPanel.transform.DOScale(0, 0.2f)).OnComplete(() =>
-        {
-            hintPanel.SetActive(false);
-        });
+        hintPanel.SetActive(false);
+        
        
     }
     //PausePanel
