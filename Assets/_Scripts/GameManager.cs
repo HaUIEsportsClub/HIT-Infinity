@@ -93,11 +93,11 @@ public class GameManager : MonoBehaviour
         {
          
             LevelManager.Instance.UnlockLevel(currentLevelIndex + 1);
-            StartCoroutine(UIManager.Instance.ShowWinPanelDelayed(1f, "Bạn đã chiến thắng!", true));
+            StartCoroutine(UIManager.Instance.ShowWinPanelDelayed(1f , true));
         }
         else
         {
-            StartCoroutine(UIManager.Instance.ShowWinPanelDelayed(1f, "Bạn đã chiến thắng trò chơi!", false));
+            StartCoroutine(UIManager.Instance.ShowWinPanelDelayed(1f, false));
         }
 
        

@@ -18,7 +18,6 @@ public class UIManager : MonoBehaviour
     public Button BuyHintButton;
     public Button OpenHintPanelButton;
     public TextMeshProUGUI hintPriceText;
-    public TextMeshProUGUI winText;
     public TextMeshProUGUI goldText;
     public Button nextLevelButton;
     public Button pauseButton;
@@ -77,10 +76,9 @@ public class UIManager : MonoBehaviour
             goldText.text = gold.ToString();
         }
     }
-    public IEnumerator ShowWinPanelDelayed(float delay, string message, bool showNextButton)
+    public IEnumerator ShowWinPanelDelayed(float delay, bool showNextButton)
     {
         yield return new WaitForSeconds(delay);
-        winText.text = message;
         nextLevelButton.gameObject.SetActive(showNextButton);
         winPanel.SetActive(true);
     }
