@@ -1,8 +1,7 @@
-using System;
-using System.Collections;
+
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -36,9 +35,12 @@ public class ShopCtrl : MonoBehaviour
 
     [Header("__________Coin_____________")] [SerializeField]
     private TextMeshProUGUI m_CoinTxt;
+
+   
     [Header("__________Holder__________")]
     [SerializeField] private List<ProductInfor> m_Skins;
     [SerializeField] private List<ProductInfor> m_Backgrounds;
+    
 
     private void Reset()
     {
@@ -65,6 +67,7 @@ public class ShopCtrl : MonoBehaviour
         {
             SceneManager.LoadScene("LevelSelection");
         });
+        
         
     }
 
@@ -131,6 +134,9 @@ public class ShopCtrl : MonoBehaviour
             m_TickPrefab = transform.Find("Tick").gameObject;
             m_TickPrefab.SetActive(false);
         }
+
+     
+        
 
         if (m_CoinTxt == null) m_CoinTxt = transform.Find("Gold").GetComponentInChildren<TextMeshProUGUI>();
         
