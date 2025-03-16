@@ -4274,6 +4274,8 @@ MonoBehaviour:
     m_Sound: {fileID: 8300000, guid: 9e2509e399c0c8c49a8b988b95047d63, type: 3}
   - Name: Coin
     m_Sound: {fileID: 8300000, guid: cd77b0f4cd59be349996f01c50c2757b, type: 3}
+  - Name: Time
+    m_Sound: {fileID: 8300000, guid: 1cd84c8915b1511449dfe2f4dc54cca5, type: 3}
   m_SoundVolumeRate: 1
   m_SFXVolumeRate: 1
 --- !u!4 &1407187663
