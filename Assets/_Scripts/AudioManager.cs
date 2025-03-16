@@ -18,6 +18,7 @@ public class AudioManager : MonoBehaviour
         Wrong,
         CorrectAnswer,
         GameOver,
+        Coin
         
     }
     [Serializable]

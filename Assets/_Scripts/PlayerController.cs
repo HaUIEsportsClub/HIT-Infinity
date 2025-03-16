@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         {
             if (GoldManager.Instance != null)
             {
-                
+                AudioManager.PlaySound(AudioManager.SoundId.Coin);
                 GoldManager.Instance.AddGold(10);
             }
 
