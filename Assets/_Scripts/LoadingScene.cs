@@ -20,6 +20,7 @@ public class LoadingScene : MonoBehaviour
     [SerializeField] private Transform moon;
 
     [SerializeField] private float moonTime = 0;
+   
     private void LoadComponent()
     {
         if (slideBar == null) slideBar = transform.GetComponentInChildren<Slider>();
@@ -50,6 +51,7 @@ public class LoadingScene : MonoBehaviour
 
     private void Start()
     {
+        
         playBtn.onClick.AddListener(() =>
         {
             SceneManager.LoadScene("LevelSelection");
@@ -58,11 +60,13 @@ public class LoadingScene : MonoBehaviour
 
     private void Update()
     {
+        
         UpdateSliderBar();
         moonTime = Mathf.Min(1, moonTime += Time.deltaTime / 12);
         MoveMoon(moonTime);
         if (Math.Abs(slideBar.value - 1) < 0.001f)
         {
+            if(Input.GetKeyDown(KeyCode.Space)) SceneManager.LoadScene("LevelSelection");
             slideBar.gameObject.SetActive(false);
             
             hitInf.gameObject.SetActive(true);
@@ -71,7 +75,7 @@ public class LoadingScene : MonoBehaviour
             hitInf.DOScale(1, 0.75f);
             hitInf.DOMove(targetPosition, 0.75f).OnComplete(() =>
             {
-                playBtn.transform.DOScale(1, 0.75f);
+                playBtn.transform.DOScale(0.3f, 0.9f);
             });
            
         } 
@@ -100,4 +104,6 @@ public class LoadingScene : MonoBehaviour
     {
         return -6 * x * x + 6 * x + 2;
     }
+
+    
 }

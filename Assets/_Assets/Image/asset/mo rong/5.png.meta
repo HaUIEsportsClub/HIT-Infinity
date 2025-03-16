@@ -260,7 +260,7 @@ TextureImporter:
         width: 30
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -268,6 +268,27 @@ TextureImporter:
       bones: []
       spriteID: 69bf03c57c7847746b3d106203dcc2d2
       internalID: -39880793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slide
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 1355
+        width: 229
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 612b41679b1e8a340aa2b905565043aa
+      internalID: 1390993274
       vertices: []
       indices: 
       edges: []
@@ -291,6 +312,7 @@ TextureImporter:
       lock: -39880793
       orange_pannel: -1348271744
       red_pannel: 184753111
+      slide: 1390993274
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
