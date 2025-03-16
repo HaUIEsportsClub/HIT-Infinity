@@ -55,11 +55,11 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (GameManager.Instance.gameActive ==true &&Time.timeScale==1&& Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
         }
-        if (Input.GetKeyDown(KeyCode.H))
+        if ( GameManager.Instance.gameActive ==true && Time.timeScale==1 &&Input.GetKeyDown(KeyCode.H))
         {
             ToggleHint();
         }
