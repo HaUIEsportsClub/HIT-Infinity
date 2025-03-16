@@ -18,11 +18,11 @@ MonoBehaviour:
     IsUnlock: 1
     ProductSprite: {fileID: 21300000, guid: 25162c45f7cfa394b9464fb87b11c62a, type: 3}
   - Name: Cuoimim
-    Cost: 500
+    Cost: 20
     IsUnlock: 0
     ProductSprite: {fileID: 1015086143, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
   - Name: leluoi
-    Cost: 750
+    Cost: 30
     IsUnlock: 0
     ProductSprite: {fileID: -1114167379, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
   - Name: dientrai
@@ -107,7 +107,7 @@ MonoBehaviour:
     IsUnlock: 1
     ProductSprite: {fileID: 21300000, guid: 7d7a31ed8b2fd1546b33aa216e6d6824, type: 3}
   - Name: spring
-    Cost: 10000
+    Cost: 10
     IsUnlock: 0
     ProductSprite: {fileID: 21300000, guid: 19f649dced76ae644a7bde0d7dd74d2e, type: 3}
   - Name: volcano
