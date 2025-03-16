@@ -194,6 +194,11 @@ public class ShopCtrl : MonoBehaviour
             if (m_ConfirmCtrl != null)
             {
                 m_ConfirmCtrl.gameObject.SetActive(true);
+                if (!MinusCoin(int.Parse(m_ShopData.SkinParams[skinId].Cost)))
+                {
+                    m_ConfirmCtrl.GrayConfirm();
+                }
+                else m_ConfirmCtrl.OKConfirm();
                 m_ConfirmCtrl.productType = ProductId.Skin;
                 m_ConfirmCtrl.index = skinId;
             }
@@ -208,6 +213,15 @@ public class ShopCtrl : MonoBehaviour
         {
             if (m_ConfirmCtrl != null)
             {
+                if (!MinusCoin(int.Parse(m_ShopData.BackgroundParams[backGroundId].Cost)))
+                {
+                    m_ConfirmCtrl.GrayConfirm();
+                }
+                else
+                {
+                    m_ConfirmCtrl.OKConfirm();
+                }
+                
                 m_ConfirmCtrl.gameObject.SetActive(true);
                 m_ConfirmCtrl.productType = ProductId.Background;
                 m_ConfirmCtrl.index = backGroundId;

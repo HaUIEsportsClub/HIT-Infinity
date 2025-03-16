@@ -10474,6 +10474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   confirmBtn: {fileID: 862650699}
   canleBtn: {fileID: 1955719498}
+  textConfirm: {fileID: 36424712}
   shopCtrl: {fileID: 1919379433}
   productType: 0
   index: -1
@@ -13960,7 +13961,6 @@ MonoBehaviour:
   m_ConfirmCtrl: {fileID: 1272578809}
   m_ExitBtn: {fileID: 506056186}
   m_CoinTxt: {fileID: 400518120}
-  m_ButtonOnClick: {fileID: 1919379434}
   m_Skins:
   - productBtn: {fileID: 244129761}
     productText: {fileID: 594792104}
