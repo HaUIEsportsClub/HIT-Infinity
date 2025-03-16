@@ -34,6 +34,7 @@ public class LevelSelection : MonoBehaviour
                 SetButtonUnlocked(i,levelIndex);
             }
             else SetButtonLocked(i);
+            
             SetupLevelStars(levelIndex, levelButtons[i].transform);
         }
     }
@@ -45,13 +46,12 @@ public class LevelSelection : MonoBehaviour
             Debug.LogWarning("không tìm thấy StarPanel trên button level " + levelIndex);
             return;
         }
-        Debug.Log("");
         foreach (Transform child in starPanel)
         {
             Destroy(child.gameObject);
         }
-
-        int starRating = 2;
+        int starRating = PlayerPrefs.GetInt("Level" + levelIndex + "Stars", 0);
+       
         Debug.Log("Level " + levelIndex + " đạt " + starRating + " sao.");
         
         for (int i = 0; i < starRating; i++)
