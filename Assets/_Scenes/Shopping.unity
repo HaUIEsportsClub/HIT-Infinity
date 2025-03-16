@@ -13653,6 +13653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShopData: {fileID: 11400000, guid: df65d2fdae8cf044c9440e5010804749, type: 2}
   m_ConfirmCtrl: {fileID: 1272578809}
+  m_ExitBtn: {fileID: 506056186}
   m_Skins:
   - productBtn: {fileID: 244129761}
     productText: {fileID: 594792104}
