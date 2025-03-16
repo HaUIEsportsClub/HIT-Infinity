@@ -98,7 +98,7 @@ MonoBehaviour:
     IsUnlock: 0
     ProductSprite: {fileID: -1700097593, guid: ab79510977682694dacd5ac315f90e00, type: 3}
   - Name: nuquy
-    Cost: 10000000
+    Cost: 1000000
     IsUnlock: 0
     ProductSprite: {fileID: -1151863033, guid: ab79510977682694dacd5ac315f90e00, type: 3}
   BackgroundParams:
