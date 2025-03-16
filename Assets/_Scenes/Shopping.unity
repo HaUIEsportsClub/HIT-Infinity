@@ -13958,6 +13958,7 @@ MonoBehaviour:
   m_TickPrefab: {fileID: 1933078530}
   m_ConfirmCtrl: {fileID: 1272578809}
   m_ExitBtn: {fileID: 506056186}
+  m_CoinTxt: {fileID: 400518120}
   m_Skins:
   - productBtn: {fileID: 244129761}
     productText: {fileID: 594792104}
