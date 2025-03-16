@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelSelection : MonoBehaviour
 {
     public Button[] levelButtons; 
-
+    public GameObject starPrefab;
     private void Start()
     {
         
@@ -33,10 +34,33 @@ public class LevelSelection : MonoBehaviour
                 SetButtonUnlocked(i,levelIndex);
             }
             else SetButtonLocked(i);
-            
+            SetupLevelStars(levelIndex, levelButtons[i].transform);
         }
     }
+    private void SetupLevelStars(int levelIndex, Transform buttonTransform)
+    {
+        Transform starPanel = buttonTransform.Find("StarPanel");
+        if (starPanel == null)
+        {
+            Debug.LogWarning("không tìm thấy StarPanel trên button level " + levelIndex);
+            return;
+        }
+        Debug.Log("");
+        foreach (Transform child in starPanel)
+        {
+            Destroy(child.gameObject);
+        }
 
+        int starRating = 2;
+        Debug.Log("Level " + levelIndex + " đạt " + starRating + " sao.");
+        
+        for (int i = 0; i < starRating; i++)
+        {
+            Debug.Log("spawn star");
+            GameObject starObj = Instantiate(starPrefab, starPanel );
+            starObj.name = "Star_" + i;
+        }
+    }
     private void SetButtonUnlocked(int buttonIndex, int levelIndex)
     {
         levelButtons[buttonIndex].interactable = true; 
