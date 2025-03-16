@@ -19,6 +19,7 @@ public class ShopCtrl : MonoBehaviour
         public Button productBtn;
         public TextMeshProUGUI productText;
         public Image productImg;
+        public Image lockImg;
         public bool isUnlock;
     }
 
@@ -29,8 +30,16 @@ public class ShopCtrl : MonoBehaviour
     [Header("__________Holder__________")]
     [SerializeField] private List<ProductInfor> m_Skins;
     [SerializeField] private List<ProductInfor> m_Backgrounds;
-    
-    
+
+    private void Reset()
+    {
+        LoadComponent();
+    }
+
+    private void Awake()
+    {
+        LoadComponent();
+    }
 
     public void Start()
     {
@@ -43,6 +52,7 @@ public class ShopCtrl : MonoBehaviour
 
     private void FirstLoadSkin()
     {
+        if(m_ShopData == null) return;
         List<ProductParam> skinParams = m_ShopData.SkinParams;
         
         for (int i = 0; i < skinParams.Count; ++i)
@@ -50,6 +60,8 @@ public class ShopCtrl : MonoBehaviour
             if(i >= m_Skins.Count) return;
             m_Skins[i].productText.text = skinParams[i].Cost;
             m_Skins[i].isUnlock = skinParams[i].IsUnlock;
+            if(m_Skins[i].isUnlock) m_Skins[i].lockImg.gameObject.SetActive(false);
+            else m_Skins[i].lockImg.gameObject.SetActive(true);
             m_Skins[i].productImg.sprite = skinParams[i].ProductSprite;
             var i1 = i;
             m_Skins[i].productBtn.onClick.AddListener(()=>ClickSkin(i1));
@@ -59,17 +71,62 @@ public class ShopCtrl : MonoBehaviour
 
     private void FirstLoadBackground()
     {
+        if(m_ShopData == null) return;
         List<ProductParam> backgroundParams = m_ShopData.BackgroundParams;
         for (int i = 0; i < backgroundParams.Count; ++i)
         {
             if(i > m_Backgrounds.Count) return;
             m_Backgrounds[i].productText.text = backgroundParams[i].Cost;
             m_Backgrounds[i].isUnlock = backgroundParams[i].IsUnlock;
+            if(m_Backgrounds[i].isUnlock) m_Backgrounds[i].lockImg.gameObject.SetActive(false);
+            else m_Backgrounds[i].lockImg.gameObject.SetActive(true);
             m_Backgrounds[i].productImg.sprite =backgroundParams[i].ProductSprite;
             var i1 = i;
             m_Backgrounds[i].productBtn.onClick.AddListener(()=>ClickBackGround(i1));
            
         }
+    }
+
+    private void LoadComponent()
+    {
+        
+        
+        if (m_Skins == null) m_Skins = new List<ProductInfor>();
+        if (m_Skins.Count <= 0)
+        {
+            Transform skinHolder = transform.Find("Skin_Shop").Find("Viewport").Find("Content");
+            foreach (Transform skinItem in skinHolder)
+            {
+                m_Skins.Add(new ProductInfor()
+                {
+                    productBtn = skinItem.GetComponentInChildren<Button>(),
+                    productText = skinItem.GetComponentInChildren<TextMeshProUGUI>(),
+                    productImg = skinItem.Find("skin_image").GetComponent<Image>(),
+                    lockImg = skinItem.Find("lock").GetComponent<Image>()
+                });
+            }
+        }
+        
+
+       
+        if (m_Backgrounds == null) m_Backgrounds = new List<ProductInfor>();
+        
+        if (m_Backgrounds.Count <= 0)
+        {
+            Transform backgroundHolder = transform.Find("BG_Shop").Find("Viewport").Find("Content");
+            foreach (Transform backgroundItem in backgroundHolder)
+            {
+                m_Backgrounds.Add(new ProductInfor()
+                {
+                    productBtn = backgroundItem.GetComponentInChildren<Button>(),
+                    productText = backgroundItem.GetComponentInChildren<TextMeshProUGUI>(),
+                    productImg = backgroundItem.Find("skin_image").GetComponent<Image>(),
+                    lockImg = backgroundItem.Find("lock").GetComponent<Image>()
+                });
+            }
+            transform.Find("BG_Shop").gameObject.SetActive(false);
+        }
+        
     }
     private void ClickSkin(int skinId)
     {
@@ -120,7 +177,9 @@ public class ShopCtrl : MonoBehaviour
 
     private void BuySkin(int skinId)
     {
+        
         m_Skins[skinId].isUnlock = true;
+        m_Skins[skinId].lockImg.gameObject.SetActive(false);
         PlayerPrefs.SetInt("Skin_" + skinId + "_unlock",1);
         PlayerPrefs.Save();
         ChooseSkin();
@@ -129,6 +188,7 @@ public class ShopCtrl : MonoBehaviour
     private void BuyBackground(int groundId)
     {
         m_Backgrounds[groundId].isUnlock = true;
+        m_Backgrounds[groundId].lockImg.gameObject.SetActive(false);
         PlayerPrefs.SetInt("Background_" + groundId + "unlock",1);
         PlayerPrefs.Save();
         ChooseBackground();
@@ -151,11 +211,11 @@ public class ShopCtrl : MonoBehaviour
             int unlock = PlayerPrefs.GetInt("Skin_" + i + "_unlock", 0);
             if (unlock == 0)
             {
-                //set lock
+                m_Skins[i].lockImg.gameObject.SetActive(true);
             }
             else
             {
-                //set unlock
+                m_Skins[i].lockImg.gameObject.SetActive(false);
             }
         }
     }
@@ -167,11 +227,11 @@ public class ShopCtrl : MonoBehaviour
             int unlock = PlayerPrefs.GetInt("Background_" + i + "unlock",0);
             if (unlock == 0)
             {
-                //set lock
+                m_Backgrounds[i].lockImg.gameObject.SetActive(true);
             }
             else
             {
-                //set unlock
+                m_Backgrounds[i].lockImg.gameObject.SetActive(false);
             }
         }
     }

@@ -18,6 +18,10 @@ public class ConfirmCtrl : MonoBehaviour
     private void Start()
     {
         canleBtn.onClick.AddListener(()=>transform.gameObject.SetActive(false));
-        confirmBtn.onClick.AddListener(()=> shopCtrl.BuyProduct(productType,index));
+        confirmBtn.onClick.AddListener(()=>
+        {
+            shopCtrl.BuyProduct(productType, index);
+            transform.gameObject.SetActive(false);
+        });
     }
 }
