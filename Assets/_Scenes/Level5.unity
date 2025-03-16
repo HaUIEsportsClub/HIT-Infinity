@@ -983,8 +983,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 282.13, y: -50}
-  m_SizeDelta: {x: 564.26, y: 100}
+  m_AnchoredPosition: {x: 277.56, y: -49.54}
+  m_SizeDelta: {x: 555.11, y: 99.09}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &207401026
 MonoBehaviour:
@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 1000233692, guid: 208b0e53def2ef44c85948455910f866, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4354,6 +4354,8 @@ MonoBehaviour:
     m_Sound: {fileID: 8300000, guid: 1cd84c8915b1511449dfe2f4dc54cca5, type: 3}
   - Name: Loading
     m_Sound: {fileID: 8300000, guid: d955a0e1d86b76f46be7cda81e47ede7, type: 3}
+  - Name: Shopping
+    m_Sound: {fileID: 0}
   m_SoundVolumeRate: 1
   m_SFXVolumeRate: 1
 --- !u!4 &1407187663
