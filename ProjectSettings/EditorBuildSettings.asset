@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scenes/Level3.unity
     guid: cd4e425899cb6fc4d85144aeaf29f6cf
+  - enabled: 1
+    path: Assets/_Scenes/Shopping.unity
+    guid: c73dbbfbad533004da37bdfe5ed0c3ea
   m_configObjects: {}
