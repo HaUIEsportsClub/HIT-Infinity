@@ -1576,6 +1576,7 @@ MonoBehaviour:
   health: 5
   maxHealth: 5
   rotationSpeed: -250
+  PlayerSR: {fileID: 427680462}
 --- !u!1 &448118390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,6 +1627,8 @@ MonoBehaviour:
   letterSlotPrefab: {fileID: 7538421079437240607, guid: 8ba97d14b5721724bb2f84bae36ecfe9, type: 3}
   gameActive: 1
   timeLeft: 30
+  BackGroundSR: {fileID: 587995377}
+  shopData: {fileID: 11400000, guid: df65d2fdae8cf044c9440e5010804749, type: 2}
 --- !u!1 &485803744
 GameObject:
   m_ObjectHideFlags: 0
@@ -4269,6 +4272,8 @@ MonoBehaviour:
     m_Sound: {fileID: 8300000, guid: a5705da10880b5346959c1eaf98ddd63, type: 3}
   - Name: GameOver
     m_Sound: {fileID: 8300000, guid: 9e2509e399c0c8c49a8b988b95047d63, type: 3}
+  - Name: Coin
+    m_Sound: {fileID: 8300000, guid: cd77b0f4cd59be349996f01c50c2757b, type: 3}
   m_SoundVolumeRate: 1
   m_SFXVolumeRate: 1
 --- !u!4 &1407187663

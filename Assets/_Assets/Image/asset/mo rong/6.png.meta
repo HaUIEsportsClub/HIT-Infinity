@@ -134,7 +134,7 @@ TextureImporter:
         width: 85
         height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -142,6 +142,48 @@ TextureImporter:
       bones: []
       spriteID: 342caa8a3724c3a4ca94d1370d424e52
       internalID: 1956289496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: khung_selection
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 1508
+        width: 242
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfc2f745637c1c5418a934f5074c852c
+      internalID: -177355628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tick
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 1187
+        width: 106
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f92be4905ad7bc64cba9ad99fb19480b
+      internalID: -954806107
       vertices: []
       indices: 
       edges: []
@@ -159,6 +201,8 @@ TextureImporter:
     nameFileIdTable:
       gold_drop: 1956289496
       gold_icon: -1499991052
+      khung_selection: -177355628
+      tick: -954806107
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -15,7 +15,13 @@ public class GameManager : MonoBehaviour
     public GameObject letterSlotPrefab;
     public bool gameActive = true; 
     private Transform[] letterSlots;
+
     public float timeLeft = 100f; 
+
+
+    public SpriteRenderer BackGroundSR;
+    public ShopData shopData;
+
     
     void Awake()
     {
@@ -28,6 +34,19 @@ public class GameManager : MonoBehaviour
       
         SetupLetterPanel();
         UIManager.Instance.UpdateTimeUI(timeLeft);
+
+        if (shopData != null)
+        {
+            int SkinId = PlayerPrefs.GetInt("SkinSelected", 0);
+            PlayerController.Instance.PlayerSR.sprite = shopData.SkinParams[SkinId].ProductSprite;
+            
+            if (BackGroundSR != null)
+            {
+                int BackgroundId = PlayerPrefs.GetInt("BackgroundSelected", 0);
+               
+                BackGroundSR.sprite = shopData.BackgroundParams[BackgroundId].ProductSprite;
+            }
+        }
         
     }
     void Update()

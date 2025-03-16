@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: nokieusohaicacthu_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 702
+        width: 285
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 999acfba98743a64d8dfc321583cf220
+      internalID: -1931163752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nokieusohaicacthu_1
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 695
+        width: 317
+        height: 319
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 693a851c32eff7e4387e14968a09d126
+      internalID: 1880809338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nokieusohaicacthu_2
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 689
+        width: 318
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3557a39956274bb4290d51118fc04fca
+      internalID: -243929568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nokieusohaicacthu_3
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 347
+        width: 326
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f36d6f4ee2c398b419bc52a71382f874
+      internalID: 297479417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nokieusohaicacthu_4
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 355
+        width: 272
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd2f9cedc61dc0c49a4c48962a90b566
+      internalID: -1262639760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nokieusohaicacthu_5
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 346
+        width: 278
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f130e0357fd5ff479f1828ea8b0e323
+      internalID: 1684843971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nokieusohaicacthu_6
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 45
+        width: 215
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a45fadd78fe2fcf44bdd7a32a23bfd2b
+      internalID: -773272412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nokieusohaicacthu_7
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 79
+        width: 222
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53d7afbbca7152942986d0e6bb69c382
+      internalID: -1261829676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nokieusohaicacthu_8
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 75
+        width: 244
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401a9a61831196545b81ca15502dd9c5
+      internalID: 424235408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +303,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      nokieusohaicacthu_0: -1931163752
+      nokieusohaicacthu_1: 1880809338
+      nokieusohaicacthu_2: -243929568
+      nokieusohaicacthu_3: 297479417
+      nokieusohaicacthu_4: -1262639760
+      nokieusohaicacthu_5: 1684843971
+      nokieusohaicacthu_6: -773272412
+      nokieusohaicacthu_7: -1261829676
+      nokieusohaicacthu_8: 424235408
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

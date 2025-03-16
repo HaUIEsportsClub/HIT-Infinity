@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1fd6926aa3b8f44eabfc5390f1b5b54, type: 3}
+  m_Name: Shop Data
+  m_EditorClassIdentifier: 
+  SkinParams:
+  - Name: BongDa
+    Cost: 0
+    IsUnlock: 1
+    ProductSprite: {fileID: 21300000, guid: 25162c45f7cfa394b9464fb87b11c62a, type: 3}
+  - Name: Cuoimim
+    Cost: 500
+    IsUnlock: 0
+    ProductSprite: {fileID: 1015086143, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: leluoi
+    Cost: 750
+    IsUnlock: 0
+    ProductSprite: {fileID: -1114167379, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 0
+    ProductSprite: {fileID: 30476295, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: cuoi
+    Cost: 750
+    IsUnlock: 0
+    ProductSprite: {fileID: 143518011, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: vanlacuoi
+    Cost: 1000
+    IsUnlock: 0
+    ProductSprite: {fileID: -814586501, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: emo6
+    Cost: 1250
+    IsUnlock: 0
+    ProductSprite: {fileID: 7132952, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: emo7
+    Cost: 1250
+    IsUnlock: 0
+    ProductSprite: {fileID: 23541848, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: emo9
+    Cost: 1250
+    IsUnlock: 0
+    ProductSprite: {fileID: -1755869702, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: emo10
+    Cost: 1500
+    IsUnlock: 0
+    ProductSprite: {fileID: 1107403566, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: emo mat trai tim
+    Cost: 1500
+    IsUnlock: 0
+    ProductSprite: {fileID: 739438627, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: emo11
+    Cost: 1750
+    IsUnlock: 0
+    ProductSprite: {fileID: 1306169991, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: emo14
+    Cost: 2000
+    IsUnlock: 0
+    ProductSprite: {fileID: -411232722, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: emo15
+    Cost: 2000
+    IsUnlock: 0
+    ProductSprite: {fileID: 1329397415, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: blue slime
+    Cost: 5000
+    IsUnlock: 0
+    ProductSprite: {fileID: 194777756, guid: 1b327f1ba1b2ecb42a81a1f94c6de5bb, type: 3}
+  - Name: green slime
+    Cost: 5000
+    IsUnlock: 0
+    ProductSprite: {fileID: 1312572484, guid: 1b327f1ba1b2ecb42a81a1f94c6de5bb, type: 3}
+  - Name: green slime co xuong tren dau
+    Cost: 10000
+    IsUnlock: 0
+    ProductSprite: {fileID: 292760400, guid: 1b327f1ba1b2ecb42a81a1f94c6de5bb, type: 3}
+  - Name: red_slime co voi voi
+    Cost: 10000
+    IsUnlock: 0
+    ProductSprite: {fileID: 1540231221, guid: 1b327f1ba1b2ecb42a81a1f94c6de5bb, type: 3}
+  - Name: con meo
+    Cost: 50000
+    IsUnlock: 0
+    ProductSprite: {fileID: 1716642246, guid: 1b327f1ba1b2ecb42a81a1f94c6de5bb, type: 3}
+  - Name: con soc
+    Cost: 75000
+    IsUnlock: 0
+    ProductSprite: {fileID: 180793949, guid: ab79510977682694dacd5ac315f90e00, type: 3}
+  - Name: nu quy
+    Cost: 100000
+    IsUnlock: 0
+    ProductSprite: {fileID: -1700097593, guid: ab79510977682694dacd5ac315f90e00, type: 3}
+  - Name: dientrai
+    Cost: 1000000
+    IsUnlock: 0
+    ProductSprite: {fileID: -1151863033, guid: ab79510977682694dacd5ac315f90e00, type: 3}
+  BackgroundParams:
+  - Name: default
+    Cost: 0
+    IsUnlock: 1
+    ProductSprite: {fileID: 21300000, guid: 7d7a31ed8b2fd1546b33aa216e6d6824, type: 3}
+  - Name: darknight
+    Cost: 100000
+    IsUnlock: 0
+    ProductSprite: {fileID: 21300000, guid: 7f0883caebc3860499c31a40a7c0cbdd, type: 3}
+  - Name: volcano
+    Cost: 150000
+    IsUnlock: 0
+    ProductSprite: {fileID: 21300000, guid: 34e77804f291451408066037e3a090be, type: 3}
+  - Name: darknight 2
+    Cost: 200000
+    IsUnlock: 0
+    ProductSprite: {fileID: 21300000, guid: 609d99177ef54ce47b8a585296abbeac, type: 3}
