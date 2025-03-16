@@ -218,7 +218,7 @@ TextureImporter:
         width: 317
         height: 387
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,7 +239,7 @@ TextureImporter:
         width: 318
         height: 385
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -247,6 +247,27 @@ TextureImporter:
       bones: []
       spriteID: a5fb6482ceb31144caf711762c9fdf0a
       internalID: -1348271744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lock
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 341
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69bf03c57c7847746b3d106203dcc2d2
+      internalID: -39880793
       vertices: []
       indices: 
       edges: []
@@ -267,6 +288,7 @@ TextureImporter:
       7-9: -1162671375
       level1-3art: 929347466
       level4-6: 62026723
+      lock: -39880793
       orange_pannel: -1348271744
       red_pannel: 184753111
   spritePackingTag: 

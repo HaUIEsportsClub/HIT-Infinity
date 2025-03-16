@@ -113,7 +113,7 @@ TextureImporter:
         width: 206
         height: 189
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -121,6 +121,69 @@ TextureImporter:
       bones: []
       spriteID: ec9dc0ce26164824893b53e553d4c008
       internalID: 108709337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: soc
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1034
+        width: 89
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b60135df9054b948b1a73f1b477dee6
+      internalID: 180793949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nuquy
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 538
+        width: 99
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffc3857b737077f4487a0c9673d0c520
+      internalID: -1151863033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dauxuong
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 1018
+        width: 74
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9fd2bf20f2ed9e4abc78ff14c4918e4
+      internalID: -1700097593
       vertices: []
       indices: 
       edges: []
@@ -137,6 +200,9 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       2_0: 108709337
+      dauxuong: -1700097593
+      nuquy: -1151863033
+      soc: 180793949
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
