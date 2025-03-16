@@ -9,7 +9,6 @@ public class LevelSelection : MonoBehaviour
     private void Start()
     {
         
-        
         if (PlayerPrefs.GetInt("FirstRun", 1) == 1) 
         {
             ResetGameData();
