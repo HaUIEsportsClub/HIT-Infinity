@@ -66,7 +66,13 @@ public class LoadingScene : MonoBehaviour
         MoveMoon(moonTime);
         if (Math.Abs(slideBar.value - 1) < 0.001f)
         {
-            if(Input.GetKeyDown(KeyCode.Space)) SceneManager.LoadScene("LevelSelection");
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                AudioManager.PlaySound(AudioManager.SoundId.Loading);
+                SceneManager.LoadScene("LevelSelection");
+               
+            }
+                   
             slideBar.gameObject.SetActive(false);
             
             hitInf.gameObject.SetActive(true);
