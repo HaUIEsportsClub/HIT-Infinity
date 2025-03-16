@@ -80,7 +80,8 @@ public class PlayerController : MonoBehaviour
             }
         }
         else if (other.CompareTag("Clock"))
-        {
+        {   
+            AudioManager.PlaySound(AudioManager.SoundId.Time);
             GameManager.Instance.AddTime(10f);
             Destroy(other.gameObject);
         }
