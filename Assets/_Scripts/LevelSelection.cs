@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelSelection : MonoBehaviour
@@ -54,6 +55,12 @@ public class LevelSelection : MonoBehaviour
     private void OnLevelButtonClick(int level)
     {
         LevelManager.Instance.LoadLevel(level);
+    }
+
+    public void LoadShop()
+    {
+        SceneManager.LoadScene("Shopping");
+
     }
     public void ResetGameData()
     {
