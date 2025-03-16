@@ -50,8 +50,10 @@ public class ShopCtrl : MonoBehaviour
     public void Start()
     {
         
-        FirstLoadSkin();
-        FirstLoadBackground();
+        bool firstLoad = (PlayerPrefs.GetInt("FirstLoadShop", 1) == 1);
+        if(firstLoad) PlayerPrefs.SetInt("FirstLoadShop",0);
+        FirstLoadSkin(firstLoad);
+        FirstLoadBackground(firstLoad);
         UpdateSkinShop();
        
         m_ExitBtn.onClick.AddListener(() =>
@@ -61,7 +63,7 @@ public class ShopCtrl : MonoBehaviour
         
     }
 
-    private void FirstLoadSkin()
+    private void FirstLoadSkin(bool firstLoad)
     {
         if(m_ShopData == null) return;
         List<ProductParam> skinParams = m_ShopData.SkinParams;
@@ -69,10 +71,20 @@ public class ShopCtrl : MonoBehaviour
         for (int i = 0; i < skinParams.Count; ++i)
         {
             if(i >= m_Skins.Count) return;
+            
             m_Skins[i].productText.text = skinParams[i].Cost;
             m_Skins[i].isUnlock = skinParams[i].IsUnlock;
-            if(m_Skins[i].isUnlock) m_Skins[i].lockImg.gameObject.SetActive(false);
+            if(m_Skins[i].isUnlock){ m_Skins[i].lockImg.gameObject.SetActive(false);}
             else m_Skins[i].lockImg.gameObject.SetActive(true);
+
+            if (firstLoad)
+            {
+                int valueSetted = 0;
+                if (m_Skins[i].isUnlock) valueSetted = 1;
+                else valueSetted = 0;
+                PlayerPrefs.SetInt("Skin_" + i + "_unlock",valueSetted);
+                PlayerPrefs.Save();
+            }
             m_Skins[i].productImg.sprite = skinParams[i].ProductSprite;
             var i1 = i;
             m_Skins[i].productBtn.onClick.AddListener(()=>ClickSkin(i1));
@@ -80,7 +92,7 @@ public class ShopCtrl : MonoBehaviour
         }
     }
 
-    private void FirstLoadBackground()
+    private void FirstLoadBackground(bool firstLoad)
     {
         if(m_ShopData == null) return;
         List<ProductParam> backgroundParams = m_ShopData.BackgroundParams;
@@ -92,7 +104,14 @@ public class ShopCtrl : MonoBehaviour
             
             if(m_Backgrounds[i].isUnlock) m_Backgrounds[i].lockImg.gameObject.SetActive(false);
             else m_Backgrounds[i].lockImg.gameObject.SetActive(true);
-            
+            if (firstLoad)
+            {
+                int valueSetted = 0;
+                if (m_Backgrounds[i].isUnlock) valueSetted = 1;
+                else valueSetted = 0;
+                PlayerPrefs.SetInt("Background_" + i + "unlock",valueSetted);
+                PlayerPrefs.Save();
+            }
             m_Backgrounds[i].productImg.sprite =backgroundParams[i].ProductSprite;
             int backgroundId = i;
             m_Backgrounds[i].productBtn.onClick.AddListener(()=>ClickBackGround(backgroundId));
@@ -251,8 +270,12 @@ public class ShopCtrl : MonoBehaviour
 
     public void UpdateSkinShop()
     {
-        int skinId = PlayerPrefs.GetInt("SkinSelected", 0);
-        ShowTick(m_Skins[skinId].lockImg.transform.parent);
+        int skinId = PlayerPrefs.GetInt("SkinSelected", -1);
+        if(skinId >= 0) ShowTick(m_Skins[skinId].lockImg.transform.parent);
+        else
+        {
+            if(PlayerPrefs.GetInt("Skin_" + 0 + "_unlock",0) == 1) ShowTick(m_Skins[0].lockImg.transform.parent);
+        }
         for (int i = 0; i < m_Skins.Count; ++i)
         {
             int unlock = PlayerPrefs.GetInt("Skin_" + i + "_unlock", 0);
@@ -271,8 +294,13 @@ public class ShopCtrl : MonoBehaviour
 
     public void UpdateBackgroundShop()
     {
-        int groundSelected = PlayerPrefs.GetInt("BackgroundSelected", 0);
-        ShowTick(m_Backgrounds[groundSelected].lockImg.transform.parent);
+        int groundSelected = PlayerPrefs.GetInt("BackgroundSelected", -1);
+        
+        if(groundSelected >= 0) ShowTick(m_Backgrounds[groundSelected].lockImg.transform.parent);
+        else
+        {
+            if(PlayerPrefs.GetInt("Background_" + 0 + "unlock",0) == 1) ShowTick(m_Backgrounds[0].lockImg.transform.parent);
+        }
         for (int i = 0; i < m_Backgrounds.Count; ++i)
         {
             int unlock = PlayerPrefs.GetInt("Background_" + i + "unlock",0);
@@ -291,6 +319,7 @@ public class ShopCtrl : MonoBehaviour
 
     private void ShowTick(Transform tickHolder)
     {
+        
         Vector3 position = tickHolder.position;
         m_TickPrefab.transform.position = position;
         m_TickPrefab.transform.SetParent(tickHolder,true);
