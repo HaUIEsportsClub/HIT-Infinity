@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -91,15 +93,22 @@ public class UIManager : MonoBehaviour
     public IEnumerator ShowWinPanelDelayed(float delay, bool showNextButton)
     {
         yield return new WaitForSeconds(delay);
-        nextLevelButton.gameObject.SetActive(showNextButton);
-        winPanel.SetActive(true);
+      
+        winPanel.transform.localScale *= 0;
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(winPanel.transform.DOScale(1.2f, 0.4f)).Append(winPanel.transform.DOScale(1, 0.2f)).OnComplete(() =>
+        {
+            nextLevelButton.gameObject.SetActive(showNextButton);
+            winPanel.SetActive(true);
+            
+        });
+        
     }
     //Hint Panel
     public void ShowHintPanel()
     {
+        hintPanel.transform.localScale *= 0;
         hintPanel.SetActive(true);
-        Time.timeScale = 0;
-
         int currentGold = GoldManager.Instance.gold;
         if (currentGold >= 10)
         {
@@ -114,23 +123,61 @@ public class UIManager : MonoBehaviour
             BuyHintButton.GetComponentInChildren<TextMeshProUGUI>().text = "10 Gold";
 
         }
+        hintPanel.transform.DOScale(1.2f, 0.1f).OnComplete(() =>
+        {
+            hintPanel.transform.DOScale(1f, 0.05f).OnComplete(() => { Time.timeScale = 0; });
+
+        });
+        
+
+        
     }
+
+    public void ShowGameOverPanel()
+    {
+        gameOverPanel.transform.localScale *= 0;
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(gameObject.transform.DOScale(1.2f, 0.4f)).Append(gameOverPanel.transform.DOScale(1, 0.2f)).OnComplete(() =>
+        {
+            gameOverPanel.gameObject.SetActive(true);
+        });
+       
+    }
+
+    
     public void HideHintPanel()
     {
-        hintPanel.SetActive(false);
+        Sequence sequence = DOTween.Sequence();
         Time.timeScale = 1;
+        sequence.Append(hintPanel.transform.DOScale(1.2f, 0.1f)).Append(hintPanel.transform.DOScale(0, 0.2f)).OnComplete(() =>
+        {
+            hintPanel.SetActive(false);
+        });
+       
     }
     //PausePanel
     public void ShowPausePanel()
     {
-        pausePanel.SetActive(true);
-        Time.timeScale = 0;
+        Sequence sequence = DOTween.Sequence();
+        pausePanel.transform.localScale *= 0;
+        sequence.Append(pausePanel.transform.DOScale(1.2f, 0.2f)).Append(pausePanel.transform.DOScale(1, 0.05f)).OnComplete(() =>
+        {
+            pausePanel.SetActive(true);
+            Time.timeScale = 0;
+        });
+
     }
 
     public void HidePausePanel()
     {
-        pausePanel.SetActive(false);
         Time.timeScale = 1;
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(pausePanel.transform.DOScale(1.2f, 0.05f)).Append(pausePanel.transform.DOScale(0, 0.1f)).OnComplete(() =>
+        {
+            pausePanel.SetActive(false);
+        });
+       
+       
     }
     public void TogglePause()
     {
@@ -184,4 +231,6 @@ public class UIManager : MonoBehaviour
        
 
     }
+
+    
 }

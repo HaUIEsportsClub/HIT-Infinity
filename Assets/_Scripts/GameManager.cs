@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
     {
         gameActive = false;
         AudioManager.PlaySound(AudioManager.SoundId.GameOver);
-        UIManager.Instance.gameOverPanel.SetActive(true);
+        UIManager.Instance.ShowGameOverPanel();
     }
     
     void SetupLetterPanel()
