@@ -123,17 +123,17 @@ public class UIManager : MonoBehaviour
         hintPanel.transform.localScale *= 0;
         hintPanel.SetActive(true);
         int currentGold = GoldManager.Instance.gold;
-        if (currentGold >= 10)
+        if (currentGold >= 100)
         {
             BuyHintButton.interactable = true;
             BuyHintButton.GetComponent<Image>().color = Color.green; // Màu xanh
-            BuyHintButton.GetComponentInChildren<TextMeshProUGUI>().text = "10 Gold";
+            BuyHintButton.GetComponentInChildren<TextMeshProUGUI>().text = "100 Gold";
         }
         else
         {
             BuyHintButton.interactable = false;
             BuyHintButton.GetComponent<Image>().color = Color.gray; // Màu xám
-            BuyHintButton.GetComponentInChildren<TextMeshProUGUI>().text = "10 Gold";
+            BuyHintButton.GetComponentInChildren<TextMeshProUGUI>().text = "100 Gold";
 
         }
         hintPanel.transform.DOScale(1.2f, 0.1f).OnComplete(() =>

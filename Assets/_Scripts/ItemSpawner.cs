@@ -44,7 +44,7 @@ public class ItemSpawner : MonoBehaviour
             float spawnRoll = Random.value; 
 
             if (spawnRoll < 0.15f) Instantiate(healthPrefab, spawnPoint.position, Quaternion.identity);
-            else if (spawnRoll < 0.2f) Instantiate(goldPrefab, spawnPoint.position, Quaternion.identity);
+            else if (spawnRoll < 0.3f) Instantiate(goldPrefab, spawnPoint.position, Quaternion.identity);
             else if (spawnRoll < 0.4f) Instantiate(clockPrefab, spawnPoint.position, Quaternion.identity);
             
             else SpawnLetterObject();

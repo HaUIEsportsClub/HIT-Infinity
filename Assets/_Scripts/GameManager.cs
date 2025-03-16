@@ -158,9 +158,9 @@ public class GameManager : MonoBehaviour
     public void BuyHint()
     {
         int currentGold = GoldManager.Instance.gold;
-        if (currentGold >= 10)
+        if (currentGold >= 100)
         {
-            GoldManager.Instance.AddGold(-10);
+            GoldManager.Instance.AddGold(-100);
 
 
             char correctLetter = currentAnswer[currentLetterIndex];
