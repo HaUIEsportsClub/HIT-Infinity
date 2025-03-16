@@ -20,6 +20,7 @@ public class AudioManager : MonoBehaviour
         GameOver,
         Coin,
         Time,
+        Loading
         
     }
     [Serializable]
