@@ -41,10 +41,7 @@ public class ShopCtrl : MonoBehaviour
 
     private void ClickSkin(int skinId)
     {
-        if (m_Skins[skinId].isUnlock)
-        {
-            // Choose this skin
-        }
+        if (m_Skins[skinId].isUnlock) ChooseSkin();
         else
         {
             if (m_ConfirmCtrl != null)
@@ -58,10 +55,7 @@ public class ShopCtrl : MonoBehaviour
 
     private void ClickBackGround(int backGroundId)
     {
-        if (m_Backgrounds[backGroundId].isUnlock)
-        {
-            // Choose background
-        }
+        if (m_Backgrounds[backGroundId].isUnlock) ChooseBackground();
         else
         {
             if (m_ConfirmCtrl != null)
@@ -95,13 +89,23 @@ public class ShopCtrl : MonoBehaviour
     private void BuySkin(int skinId)
     {
         m_Skins[skinId].isUnlock = true;
+        ChooseSkin();
     }
 
     private void BuyBackground(int groundId)
     {
         m_Backgrounds[groundId].isUnlock = true;
+        ChooseBackground();
     }
 
-    
+    private void ChooseSkin()
+    {
+        
+    }
+
+    private void ChooseBackground()
+    {
+        
+    }
     
 }
