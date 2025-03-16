@@ -1620,7 +1620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59de7494ee577df4ba1b3c3c654db054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentAnswer: VIETNAM
+  currentAnswer: VIE
   currentLetterIndex: 0
   letterPanel: {fileID: 101920341}
   letterSlotPrefab: {fileID: 7538421079437240607, guid: 8ba97d14b5721724bb2f84bae36ecfe9, type: 3}
@@ -2230,6 +2230,10 @@ MonoBehaviour:
   - {fileID: 1475806506}
   whiteHeart: {fileID: 21300000, guid: d6d030bbb1d62a149bc01412a8c19dcf, type: 3}
   redHeart: {fileID: 21300000, guid: 56b860d643f0a574a9b1105f2abe0182, type: 3}
+  starPlaceholder1: {fileID: 1691494617}
+  starPlaceholder2: {fileID: 2109359372}
+  starPlaceholder3: {fileID: 1704245741}
+  starFilled: {fileID: 434747365, guid: daceab00936ff5b46b2a37eec1a74389, type: 3}
 --- !u!1 &575735907
 GameObject:
   m_ObjectHideFlags: 0

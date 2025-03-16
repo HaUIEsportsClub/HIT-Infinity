@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public bool gameActive = true; 
     private Transform[] letterSlots;
     public float timeLeft = 100f; 
+    
     void Awake()
     {
         Instance = this;
@@ -114,8 +115,11 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.OpenHintPanelButton.interactable = false;
         UIManager.Instance.pauseButton.interactable = false;
         
-
+        int starRating = CalculateStarRating();
+        UIManager.Instance.DisplayStars(starRating);
         int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        PlayerPrefs.SetInt("Level" + currentLevelIndex + "Stars", starRating);
+        PlayerPrefs.Save();
         if (currentLevelIndex + 1 < SceneManager.sceneCountInBuildSettings)
         {
          
@@ -168,6 +172,22 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(currentLevelIndex + 1);
     }
 
-  
+    private int CalculateStarRating()
+    {
+        float healthRatio = PlayerController.Instance.health / (float)PlayerController.Instance.maxHealth;
+        float timeRatio = GameManager.Instance.timeLeft / 60f;
+        // int targetGold = 10000; 
+        // float goldRatio = Mathf.Clamp01(GoldManager.Instance.gold / (float)targetGold);
+    
+        float averageScore = (healthRatio + timeRatio ) / 3f;
+    
+        if (averageScore >= 0.8f)
+            return 3;
+        else if (averageScore >= 0.5f)
+            return 2;
+        else
+            return 1;
+    }
+
    
 }

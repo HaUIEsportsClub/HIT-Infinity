@@ -29,6 +29,11 @@ public class UIManager : MonoBehaviour
 
     public Sprite whiteHeart;
     public Sprite redHeart;
+    
+    public Image starPlaceholder1;
+    public Image starPlaceholder2;
+    public Image starPlaceholder3;
+    public Sprite starFilled;
     void Awake()
     {
         if (Instance == null)
@@ -146,5 +151,37 @@ public class UIManager : MonoBehaviour
         settingPanel.SetActive(false) ;
         Time.timeScale = 1;
     }
+    public void DisplayStars(int starRating)
+    {
+        if (starRating >= 1)
+            starPlaceholder1.sprite = starFilled;
+        else
+        {
+            starPlaceholder2.gameObject.SetActive(false);
+            starPlaceholder3.gameObject.SetActive(false);
+            
+        }
 
+        if (starRating >= 2)
+        {
+            starPlaceholder1.sprite = starFilled;
+            starPlaceholder2.sprite = starFilled;
+            
+        }
+        else
+        {
+            starPlaceholder3.gameObject.SetActive(false);
+            
+        }
+
+        if (starRating >= 3)
+        {
+            starPlaceholder1.sprite = starFilled;
+            starPlaceholder2.sprite = starFilled;
+            starPlaceholder3.sprite = starFilled;
+            
+        }
+       
+
+    }
 }
