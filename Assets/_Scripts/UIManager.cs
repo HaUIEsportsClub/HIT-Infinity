@@ -59,6 +59,10 @@ public class UIManager : MonoBehaviour
         {
             TogglePause();
         }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            ToggleHint();
+        }
     }
     public void UpdateHealthUI(int health)
     {
@@ -185,6 +189,14 @@ public class UIManager : MonoBehaviour
             HidePausePanel();
         else
             ShowPausePanel();
+    }
+
+    public void ToggleHint()
+    {
+        if (hintPanel.activeSelf)
+            HideHintPanel();
+        else
+            ShowHintPanel();
     }
     //Setting Panel
     public void ShowSettingPanel()
