@@ -984,7 +984,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000030518, y: -137.1}
-  m_SizeDelta: {x: 564.26, y: 100}
+  m_SizeDelta: {x: 613.94, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &207401026
 MonoBehaviour:
@@ -1698,7 +1698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59de7494ee577df4ba1b3c3c654db054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentAnswer: HITCLUB
+  currentAnswer: NHATUHOALO
   currentLetterIndex: 0
   letterPanel: {fileID: 101920341}
   letterSlotPrefab: {fileID: 7538421079437240607, guid: 8ba97d14b5721724bb2f84bae36ecfe9, type: 3}
@@ -3159,7 +3159,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3a6563abe48c4e74d985cd5efed1ef6d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3ccc7a5aa7b4e7641856a2885546fb08, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4616,7 +4616,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0110\xE2y l\xE0 g\xEC?"
+  m_text: "T\xEAn di t\xEDch l\u1ECBch s\u1EED H\xE0 N\u1ED9i\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

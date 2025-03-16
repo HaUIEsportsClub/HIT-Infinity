@@ -1698,7 +1698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59de7494ee577df4ba1b3c3c654db054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentAnswer: HITCLUB
+  currentAnswer: BONGBAY
   currentLetterIndex: 0
   letterPanel: {fileID: 101920341}
   letterSlotPrefab: {fileID: 7538421079437240607, guid: 8ba97d14b5721724bb2f84bae36ecfe9, type: 3}
@@ -3159,7 +3159,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3a6563abe48c4e74d985cd5efed1ef6d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 06995c028a47880409b7e9f904a49f8e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
