@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
     public int health = 5;
     public int maxHealth = 5;
     public float rotationSpeed = -250f;
-   
+
+    public SpriteRenderer PlayerSR;
     void Awake()
     {
         if (Instance == null)
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        if (PlayerSR == null) PlayerSR = transform.GetComponent<SpriteRenderer>();
         if (UIManager.Instance != null)
         {
             UIManager.Instance.UpdateHealthUI(health);
