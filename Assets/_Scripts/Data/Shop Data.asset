@@ -13,8 +13,100 @@ MonoBehaviour:
   m_Name: Shop Data
   m_EditorClassIdentifier: 
   SkinParams:
-  - Name: Hehe
-    Cost: 100
-    IsUnlock: 0
+  - Name: BongDa
+    Cost: 0
+    IsUnlock: 1
     ProductSprite: {fileID: 21300000, guid: 25162c45f7cfa394b9464fb87b11c62a, type: 3}
+  - Name: Cuoimim
+    Cost: 500
+    IsUnlock: 1
+    ProductSprite: {fileID: 1015086143, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: leluoi
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: -1114167379, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: 30476295, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: 143518011, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: -814586501, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: 7132952, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: 23541848, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: -1755869702, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: 1107403566, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: 739438627, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: 1306169991, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: -1318401001, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: 30476295, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: 30476295, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: 30476295, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: 30476295, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: 30476295, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: 30476295, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: 30476295, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: 30476295, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: 30476295, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: 30476295, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
+  - Name: dientrai
+    Cost: 750
+    IsUnlock: 1
+    ProductSprite: {fileID: 30476295, guid: d21cf1fa46c52e44a99de9b10d80b49e, type: 3}
   BackgroundParams: []
