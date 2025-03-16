@@ -90,7 +90,7 @@ public class LoadingScene : MonoBehaviour
     private void UpdateSliderBar()
     {
         float additionSiderBar;
-        if (slideBar.value < 0.7f) additionSiderBar = Time.deltaTime / 10;
+        if (slideBar.value < 0.7f) additionSiderBar = Time.deltaTime / 5;
         else if (slideBar.value >= 0.7f && slideBar.value < 0.9f) additionSiderBar = Time.deltaTime / 20;
         else additionSiderBar = Time.deltaTime;
         slideBar.value = Mathf.Min(1, slideBar.value + additionSiderBar);

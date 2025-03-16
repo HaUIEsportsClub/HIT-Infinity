@@ -158,10 +158,13 @@ public class UIManager : MonoBehaviour
     //PausePanel
     public void ShowPausePanel()
     {
-     
+        Sequence sequence = DOTween.Sequence();
+        pausePanel.transform.localScale *= 0;
+        sequence.Append(pausePanel.transform.DOScale(1.4f, 0.2f)).Append(pausePanel.transform.DOScale(1.2f, 0.05f)).OnComplete(() =>
+        {
             pausePanel.SetActive(true);
             Time.timeScale = 0;
-        
+        });
 
     }
 
