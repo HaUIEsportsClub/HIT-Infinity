@@ -103,6 +103,15 @@ public class UIManager : MonoBehaviour
         sequence.Append(winPanel.transform.DOScale(1.2f, 0.4f)).Append(winPanel.transform.DOScale(1, 0.2f)).OnComplete(() =>
         {
             nextLevelButton.gameObject.SetActive(showNextButton);
+            if (showNextButton)
+            {
+                nextLevelButton.onClick.RemoveAllListeners();
+                nextLevelButton.onClick.AddListener(() =>
+                {
+                    int nextLevel = PlayerPrefs.GetInt("CurrentLevelIndex", 0) + 1;
+                    LevelManager.Instance.LoadLevel(nextLevel);
+                });
+            }
             winPanel.SetActive(true);
             
         });
@@ -198,6 +207,7 @@ public class UIManager : MonoBehaviour
         else
             ShowHintPanel();
     }
+    
     //Setting Panel
     public void ShowSettingPanel()
     {
