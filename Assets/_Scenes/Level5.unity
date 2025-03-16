@@ -4329,7 +4329,7 @@ MonoBehaviour:
   m_SFXSource: {fileID: 677357118}
   m_SoundSources:
   - Name: InGame
-    m_Sound: {fileID: 8300000, guid: 3b3568946f7c9a94e97666c83d736a5a, type: 3}
+    m_Sound: {fileID: 8300000, guid: de8937f55f6a5aa4583b6df5c6fbe958, type: 3}
   - Name: GameSelection
     m_Sound: {fileID: 0}
   - Name: LoadingScene
@@ -4354,6 +4354,10 @@ MonoBehaviour:
     m_Sound: {fileID: 8300000, guid: 1cd84c8915b1511449dfe2f4dc54cca5, type: 3}
   - Name: Loading
     m_Sound: {fileID: 8300000, guid: d955a0e1d86b76f46be7cda81e47ede7, type: 3}
+  - Name: Shopping
+    m_Sound: {fileID: 0}
+  - Name: Select
+    m_Sound: {fileID: 0}
   m_SoundVolumeRate: 1
   m_SFXVolumeRate: 1
 --- !u!4 &1407187663

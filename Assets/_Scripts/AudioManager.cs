@@ -21,7 +21,8 @@ public class AudioManager : MonoBehaviour
         Coin,
         Time,
         Loading,
-        Shopping
+        Shopping,  
+        Select
 
     }
     [Serializable]

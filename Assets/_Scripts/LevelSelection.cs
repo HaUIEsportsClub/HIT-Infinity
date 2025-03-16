@@ -55,7 +55,11 @@ public class LevelSelection : MonoBehaviour
    
     private void OnLevelButtonClick(int level)
     {
+
         LevelManager.Instance.LoadLevel(level);
+        
+
+
     }
 
     public void LoadShop()
@@ -63,7 +67,7 @@ public class LevelSelection : MonoBehaviour
         
         SceneManager.LoadScene("Shopping");
         Debug.Log("he");
-        AudioManager.PlaySound(AudioManager.SoundId.Shopping);
+        AudioManager.PlayBackgroundSound(AudioManager.SoundId.Shopping);
 
     }
     public void ResetGameData()

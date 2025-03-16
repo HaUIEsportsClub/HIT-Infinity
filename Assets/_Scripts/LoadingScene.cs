@@ -51,7 +51,7 @@ public class LoadingScene : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.PlayBackgroundSound(AudioManager.SoundId.Loading);
+        AudioManager.PlaySound(AudioManager.SoundId.Loading);
         playBtn.onClick.AddListener(() =>
         {
             SceneManager.LoadScene("LevelSelection");

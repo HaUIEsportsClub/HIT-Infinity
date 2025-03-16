@@ -1291,7 +1291,9 @@ MonoBehaviour:
   - Name: Loading
     m_Sound: {fileID: 8300000, guid: d955a0e1d86b76f46be7cda81e47ede7, type: 3}
   - Name: Shopping
-    m_Sound: {fileID: 8300000, guid: 8fbe6fe82d157f840b7f4b5915ea1d1e, type: 3}
+    m_Sound: {fileID: 0}
+  - Name: Select
+    m_Sound: {fileID: 8300000, guid: 17c6a41245d29ae4fbce113866570a7a, type: 3}
   m_SoundVolumeRate: 1
   m_SFXVolumeRate: 1
 --- !u!4 &1625909304
