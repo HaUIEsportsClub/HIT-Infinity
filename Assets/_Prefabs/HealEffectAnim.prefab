@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6405494106065271406}
   - component: {fileID: 6405494106065271407}
   - component: {fileID: 6405494106065271400}
+  - component: {fileID: 3996601707242593169}
   m_Layer: 0
   m_Name: HealEffectAnim
   m_TagString: Untagged
@@ -106,3 +107,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3996601707242593169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6405494106065271401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61794036eb02d9c46b7d9b06404b9fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
