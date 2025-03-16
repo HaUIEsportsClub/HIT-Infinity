@@ -78,9 +78,9 @@ public class PlayerController : MonoBehaviour
                 {
                     UIManager.Instance.UpdateHealthUI(health);
                 }
-                Destroy(other.gameObject);
                 healthEffect.gameObject.SetActive(true);
             }
+                Destroy(other.gameObject);
         }
         else if (other.CompareTag("Clock"))
         {   
