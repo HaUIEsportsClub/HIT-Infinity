@@ -8,7 +8,7 @@ public class LevelSelection : MonoBehaviour
 
     private void Start()
     {
-        
+        AudioManager.StopSound();
         if (PlayerPrefs.GetInt("FirstRun", 1) == 1) 
         {
             ResetGameData();
@@ -56,14 +56,14 @@ public class LevelSelection : MonoBehaviour
     private void OnLevelButtonClick(int level)
     {
         LevelManager.Instance.LoadLevel(level);
+        AudioManager.PlayBackgroundSound(AudioManager.SoundId.InGame);
     }
 
     public void LoadShop()
     {
         
         SceneManager.LoadScene("Shopping");
-        Debug.Log("he");
-        AudioManager.PlaySound(AudioManager.SoundId.Shopping);
+       
 
     }
     public void ResetGameData()
