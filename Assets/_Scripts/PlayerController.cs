@@ -77,6 +77,11 @@ public class PlayerController : MonoBehaviour
                 Destroy(other.gameObject);
             }
         }
+        else if (other.CompareTag("Clock"))
+        {
+            GameManager.Instance.AddTime(10f);
+            Destroy(other.gameObject);
+        }
     }
 
     public void TakeDamage()
@@ -89,9 +94,8 @@ public class PlayerController : MonoBehaviour
 
         if (health <= 0)
         {
-            GameManager.Instance.gameActive = false;
-            AudioManager.PlaySound(AudioManager.SoundId.GameOver);
-            UIManager.Instance.gameOverPanel.SetActive(true);
+            GameManager.Instance.GameOver();
+           
         }
     }
     void OnCollisionEnter2D(Collision2D other)

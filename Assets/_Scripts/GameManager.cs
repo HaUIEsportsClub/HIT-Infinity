@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject letterSlotPrefab;
     public bool gameActive = true; 
     private Transform[] letterSlots;
+    public float timeLeft = 100f; 
     void Awake()
     {
         Instance = this;
@@ -25,7 +26,33 @@ public class GameManager : MonoBehaviour
     
       
         SetupLetterPanel();
+        UIManager.Instance.UpdateTimeUI(timeLeft);
         
+    }
+    void Update()
+    {
+        if (!gameActive) return;
+        
+        // Giảm thời gian còn lại
+        timeLeft -= Time.deltaTime;
+        UIManager.Instance.UpdateTimeUI(timeLeft);
+
+        if (timeLeft <= 0)
+        {
+            GameOver();
+        }
+    }
+  
+    public void AddTime(float seconds)
+    {
+        timeLeft += seconds;
+        UIManager.Instance.UpdateTimeUI(timeLeft);
+    }
+    public void GameOver()
+    {
+        gameActive = false;
+        AudioManager.PlaySound(AudioManager.SoundId.GameOver);
+        UIManager.Instance.gameOverPanel.SetActive(true);
     }
     
     void SetupLetterPanel()

@@ -7,7 +7,8 @@ public class ItemSpawner : MonoBehaviour
     [Header("Cài đặt Spawn")]
     public GameObject letterPrefab;     
     public GameObject healthPrefab;    
-    public GameObject goldPrefab;       
+    public GameObject goldPrefab;   
+    public GameObject clockPrefab;
     public Transform spawnPoint;       
 
     [Header("Sprites chữ A-Z")]
@@ -43,7 +44,8 @@ public class ItemSpawner : MonoBehaviour
             float spawnRoll = Random.value; 
 
             if (spawnRoll < 0.15f) Instantiate(healthPrefab, spawnPoint.position, Quaternion.identity);
-            else if (spawnRoll < 0.30f) Instantiate(goldPrefab, spawnPoint.position, Quaternion.identity);
+            else if (spawnRoll < 0.3f) Instantiate(goldPrefab, spawnPoint.position, Quaternion.identity);
+            else if (spawnRoll < 0.5f) Instantiate(clockPrefab, spawnPoint.position, Quaternion.identity);
             
             else SpawnLetterObject();
         }

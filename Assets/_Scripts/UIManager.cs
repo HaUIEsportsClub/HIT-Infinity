@@ -19,6 +19,8 @@ public class UIManager : MonoBehaviour
     public Button OpenHintPanelButton;
     public TextMeshProUGUI hintPriceText;
     public TextMeshProUGUI goldText;
+    public TextMeshProUGUI timerText;
+
     public Button nextLevelButton;
     public Button pauseButton;
     public Button settingButton;
@@ -75,6 +77,11 @@ public class UIManager : MonoBehaviour
         {
             goldText.text = gold.ToString();
         }
+    }
+    public void UpdateTimeUI(float time)
+    {
+        if (timerText != null)
+            timerText.text = Mathf.CeilToInt(time).ToString() + "s";
     }
     public IEnumerator ShowWinPanelDelayed(float delay, bool showNextButton)
     {
