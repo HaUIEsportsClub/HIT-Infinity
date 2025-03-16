@@ -136,12 +136,12 @@ public class GameManager : MonoBehaviour
         
         int starRating = CalculateStarRating();
         UIManager.Instance.DisplayStars(starRating);
-        int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        int currentLevelIndex = PlayerPrefs.GetInt("CurrentLevelIndex", 0);
         PlayerPrefs.SetInt("Level" + currentLevelIndex + "Stars", starRating);
         PlayerPrefs.Save();
         if (currentLevelIndex + 1 < SceneManager.sceneCountInBuildSettings)
         {
-         
+            
             LevelManager.Instance.UnlockLevel(currentLevelIndex + 1);
             StartCoroutine(UIManager.Instance.ShowWinPanelDelayed(1f , true));
         }
@@ -185,7 +185,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        int currentLevelIndex = PlayerPrefs.GetInt("CurrentLevelIndex", 0);
 
 
         SceneManager.LoadScene(currentLevelIndex + 1);

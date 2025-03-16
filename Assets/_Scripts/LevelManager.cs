@@ -43,6 +43,8 @@ public class LevelManager : MonoBehaviour
     {
         if (IsLevelUnlocked(level))
         {
+            PlayerPrefs.SetInt("CurrentLevelIndex", level);
+            PlayerPrefs.Save();
             SceneManager.LoadScene("Level" + level);
         }
     }
