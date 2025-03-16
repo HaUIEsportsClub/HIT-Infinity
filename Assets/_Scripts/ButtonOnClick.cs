@@ -19,17 +19,19 @@ public class ButtonOnClick : MonoBehaviour
         
         skinBtn.onClick.AddListener(OnSkinBtnClick);
         backgroundBtn.onClick.AddListener(OnBackgroundBtnClick);
+        OnSkinBtnClick();
     }
 
     // Update is called once per frame
-    private void OnSkinBtnClick()
+    public void OnSkinBtnClick()
     {
+        
         SetButtonColor(skinBtn, selectedColor);
         SetButtonColor(backgroundBtn, defaultColor);
         
     }
 
-    void OnBackgroundBtnClick()
+    public void OnBackgroundBtnClick()
     {
         SetButtonColor(skinBtn, defaultColor);
         SetButtonColor(backgroundBtn, selectedColor);
@@ -37,6 +39,7 @@ public class ButtonOnClick : MonoBehaviour
 
     void SetButtonColor(Button button, Color color)
     {
+        
         ColorBlock colors = button.colors;
         colors.normalColor = color;
         colors.highlightedColor = color;
