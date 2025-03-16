@@ -71,7 +71,7 @@ public class LoadingScene : MonoBehaviour
             hitInf.DOScale(1, 0.75f);
             hitInf.DOMove(targetPosition, 0.75f).OnComplete(() =>
             {
-                playBtn.transform.DOScale(1, 0.75f);
+                playBtn.transform.DOScale(0.3f, 0.9f);
             });
            
         } 
